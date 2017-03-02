@@ -69,7 +69,7 @@ Các biến kiểu Boolean phải bắt đầu bằng chữ ‘is’
 ```$isDead , isDefault ```
 
 Các biến kiểu mảng phải là từ số nhiều ( có s hoặc es cuối từ)
- 
+
 ```$products , customers , suppliers ```
 
 Các hàm lấy giá trị phải có chữ bắt đầu bằng từ get , gắn giá trị bắt đầu bằng từ set
