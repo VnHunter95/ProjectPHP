@@ -37,6 +37,10 @@ Nếu push lên rồi mà có thiếu sót cần chỉnh sửa thêm thì phải
 
 ## Hướng dẫn project
 
+Các task chức năng nằm trong đây :
+
+https://docs.google.com/spreadsheets/d/1XnPNzcEc-Vf9zgvdxL6Vz9W-zROr261tizqXcVSeWwM/edit#gid=0
+
 Project sau khi clone về thì đưa vào thư mục htdoc của xampp . Mặc định C:\xampp\htdocs . 
 
 Tạo folder riêng đặt tên theo tên giao diện trong User/Method hoặc Admin/Method . Trong đó chứa các hàm,phương thức dùng riêng cho giao diện đó .
