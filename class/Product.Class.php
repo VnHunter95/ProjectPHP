@@ -1,5 +1,5 @@
 <?php
-      require_once("config/DB.class.php");
+      require_once($_SERVER['DOCUMENT_ROOT']."/config/DB.class.php");
 
     class Product{
       private $productId;
@@ -46,10 +46,10 @@
         return $res;
       }
       //Get $quantity New Products
-      public static function ($quantity)
+      public static function list_new_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product WHERE product_supplier_id = '".$supid."' ORDER BY update_date LIMIT ".$quantity;
+        $sql = "SELECT * FROM product WHERE product_supplier_id = '".$supid."' ORDER BY update_date LIMIT ".$quantity."";
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -57,7 +57,7 @@
       public static function list_popular_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product ORDER BY number_sold LIMIT ".$quantity;
+        $sql = "SELECT * FROM product ORDER BY number_sold LIMIT ".$quantity."";
         $res=$db->select_to_array($sql);
         return $res;
       }
