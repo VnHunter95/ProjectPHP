@@ -49,7 +49,11 @@
       public static function list_new_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product ORDER BY update_date DESC LIMIT ".$quantity."";
+        $sql = "SELECT * FROM product ORDER BY update_date DESC ";
+        if($quantity!=0)
+        {
+          $sql = $sql." LIMIT ".$quantity."";
+        }
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -57,7 +61,11 @@
       public static function list_popular_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product ORDER BY number_sold LIMIT ".$quantity."";
+        $sql = "SELECT * FROM product ORDER BY number_sold ";
+        if($quantity!=0)
+        {
+          $sql =$sql." LIMIT ".$quantity."";
+        }
         $res=$db->select_to_array($sql);
         return $res;
       }
