@@ -49,7 +49,7 @@
       public static function list_new_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product WHERE product_supplier_id = '".$supid."' ORDER BY update_date LIMIT ".$quantity."";
+        $sql = "SELECT * FROM product ORDER BY update_date DESC LIMIT ".$quantity."";
         $res=$db->select_to_array($sql);
         return $res;
       }
