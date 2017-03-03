@@ -46,7 +46,7 @@
         return $res;
       }
       //Get $quantity New Products
-      public static function list_new_product($quantity)
+      public static function ($quantity)
       {
         $db= new Db();
         $sql = "SELECT * FROM product WHERE product_supplier_id = '".$supid."' ORDER BY update_date LIMIT ".$quantity;
