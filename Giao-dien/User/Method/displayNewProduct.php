@@ -3,7 +3,9 @@
 ?>
 <?php
   $col = 1;
-  $products=getProduct(true,6);
+  $products=getProduct(true,9);
+  $loopCount = count($products);
+  $loop=0;
   foreach($products as $item)
   {
     if($col==1)
@@ -13,7 +15,7 @@
     $filename = ProductImage::get_one_product_image($item['product_id']);
     echo "<div class='col-md-4 grid-top'>"
           ."<a href='single.html' class='b-link-stripe b-animate-go  thickbox'>"
-          ."<img class='img-responsive' src='/shared/image/".$filename."' alt='' style='height: 356px; margin: 0 auto;'>"
+          ."<img src='/shared/image/".$filename."' alt='' style='block;max-width: 100%; max-height: 356px; margin: 0 auto;'>"
               ."<div class='b-wrapper'>"
                   ."<h3 class='b-animate b-from-left    b-delay03'>"
                     ."<span>Xem Ngay</span>"
@@ -22,6 +24,11 @@
           ."</a>"
           ."<p><a href='single.html'>".$item['product_name']."</a></p>"
           ."</div>";
+    if(++$loop === $loopCount) {
+    echo "<div class='clearfix'></div>";
+    echo "</div>";
+    return;
+    }
     if($col==3)
     {
       echo "</div>";
@@ -29,10 +36,5 @@
     }else {
       $col++;
     }
-  }
-  //end of loop
-  if($col!=1)
-  {
-    echo "</div>";
   }
 ?>
