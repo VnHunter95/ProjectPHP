@@ -69,6 +69,79 @@
         $res=$db->select_to_array($sql);
         return $res;
       }
+      #Search product, return list of product that producr name,description,suppiler name,group name match $input,
+      #if not found search product by tag
+      public static function search($input)
+      {
+        $db= new Db();
+        $sql = "SELECT DISTINCT p.product_name ,p.product_id ,p.supplier_id ,p.product_group_id ,p.description ,p.price ,p.number_remain ,p.number_sold ,p.update_date"
+              ." FROM product p, product_group pg, supplier s"
+              ." WHERE p.product_group_id = pg.product_group_id AND p.supplier_id = s.supplier_id"
+              ." AND p.product_name like '%".$input."%'"
+              ." OR p.description like '%".$input."%'"
+              ." OR pg.product_group_name like '%".$input."%'"
+              ." OR s.supplier_name like '%".$input."%'"
+              ." ORDER BY product_name";
+        $res=$db->select_to_array($sql);
+        if($res==false)
+        {
+          $res=$this->searchByTag($input);
+        }
+        return $res;
+      }
+      #Search product that Tag Name conntain $input
+      public static function searchByTag($input)
+      {
+        $db= new Db();
+        $sql =  " SELECT p.* "
+                ." FROM product_tag pt,product p , tag t"
+                ." WHERE pt.product_id = p.product_id AND t.tag_id = pt.tag_id"
+                ." AND t.tag_name like '%".$input."%'";
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
+      #search product that Group Name contain $input
+      public static function searchByGroup($input)
+      {
+        $db= new Db();
+        $sql =  "SELECT p.*"
+                ." FROM product p , product_group pg"
+                ." WHERE p.product_group_id = pg.product_group_id"
+                ." AND pg.product_group_name like '%".$input."%'";
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
+      #search product that Suppiler Name contain $input
+      public static function searchBySupplier($input)
+      {
+        $db= new Db();
+        $sql =  "SELECT p.*"
+                ." FROM product p , supplier s"
+                ." WHERE p.supplier_id = s.supplier_id"
+                ." AND s.supplier_name like '%".$input."%'";
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
+      #search product that product name contain $input
+      public static function searchByName($input)
+      {
+        $db= new Db();
+        $sql =   " SELECT * "
+                ." FROM product"
+                ." WHERE product_name like '%".$input."%'";
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
+      #search product that product description contain $input
+      public static function searchByDescription($input)
+      {
+        $db= new Db();
+        $sql =  "SELECT *"
+                ." FROM product"
+                ." WHERE description like '%".$input."%'";
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
     }
 
 ?>
