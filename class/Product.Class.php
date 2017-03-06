@@ -30,18 +30,20 @@
         $res=$db->select_to_array($sql);
         return $res;
       }
-      //Get Product list by group
-      public static function list_product_by_group($groupid){
-        $db= new Db();
-        $sql = "SELECT * FROM product WHERE product_group_id = '".$groupid."' ORDER BY product_name";
+      //Get Product list by group by pages
+      public static function list_product_by_group($groupId,$page,$productPerPage){
+        $db=new DB();
+        $startIndex = ($productPerPage*($page-1));
+        $sql = "SELECT * FROM product WHERE product_group_id = '".$groupId."' ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
         $res=$db->select_to_array($sql);
         return $res;
       }
       //Get Product List by Supplier
-      public static function list_product_by_supplier($supid)
+      public static function list_product_by_supplier($supplierId,$page,$productPerPage)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product WHERE product_supplier_id = '".$supid."' ORDER BY product_name";
+        $startIndex = ($productPerPage*($page-1));
+        $sql = "SELECT * FROM product WHERE supplier_id = '".$supplierId."' ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -141,6 +143,31 @@
                 ." WHERE description like '%".$input."%'";
         $res=$db->select_to_array($sql);
         return $res;
+      }
+      public static function listProductWithLimit($limit)
+      {
+        $db= new Db();
+        $sql = "SELECT * FROM product LIMIT ".$limit;
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
+      public static function getProductByGroupPageCount($groupId,$productPerPage)
+      {
+        $db = new DB();
+        $res = $db->query_execute("SELECT COUNT(*) as rowCount FROM product WHERE product_group_id = '".$groupId."'");
+        $rowCount = $res->fetch_row();
+        $pageCount =  ($rowCount[0] / $productPerPage) + 1;
+        $pageCount  = intval($pageCount);
+        return $pageCount;
+      }
+      public static function getProductBySupplierPageCount($supplierId,$productPerPage)
+      {
+        $db = new DB();
+        $res = $db->query_execute("SELECT COUNT(*) as rowCount FROM product WHERE supplier_id = '".$supplierId."'");
+        $rowCount = $res->fetch_row();
+        $pageCount =  ( $rowCount[0] / $productPerPage ) + 1;
+        $pageCount = intval($pageCount);
+        return $pageCount;
       }
     }
 
