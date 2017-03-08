@@ -38,7 +38,6 @@
           default:
             break;
       }
-
       if(!empty($products))
       {
           return $products;

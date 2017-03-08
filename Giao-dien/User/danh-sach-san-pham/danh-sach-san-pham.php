@@ -2,6 +2,7 @@
 			require_once($_SERVER['DOCUMENT_ROOT']."/class/Supplier.Class.php");
 			require_once($_SERVER['DOCUMENT_ROOT']."/class/Product.Class.php");
 			require_once($_SERVER['DOCUMENT_ROOT']."/class/ProductImage.Class.php");
+			require_once($_SERVER['DOCUMENT_ROOT']."/class/Tag.Class.php");
 			require_once($_SERVER['DOCUMENT_ROOT']."/class/Helper.php");
 ?>
 <!DOCTYPE html>
@@ -28,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="/shared/js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
 <script src="/shared/js/simpleCart.min.js"> </script>
+<script src="/shared/js/searchproduct.js"></script>
 </head>
 <body>
 <!--header-->
@@ -35,8 +37,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 			<div class="search">
-					<form>
-						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<form onsubmit="return preSearchProduct();">
+						<input type="text" id="search-input" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 						<input type="submit" value="Go">
 					</form>
 			</div>
@@ -200,8 +202,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="col-md-3 product-price">
 		<!--Display Category - Product Group-->
-		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/Method/displayCategoryLeftSide.php")?>
-				<!--initiate accordion-->
+		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayCategoryLeftSide.php");?>
+		<!--initiate accordion-->
 		<script type="text/javascript">
 			$(function() {
 			    var menu_ul = $('.menu > li > ul'),
@@ -222,86 +224,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 <!-- TAG -->
-	<div class="product-middle">
-
-					<div class="fit-top">
-						<h6 class="shop-top">Lorem Ipsum</h6>
-						<a href="single.html" class="shop-now">SHOP NOW</a>
-						<div class="clearfix"> </div>
-					</div>
+		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayTagLeftSide.php");?>
+		</div>
+		<div class="col-md-9 product1">
+			<div id = "product-list">
+				<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayProductList.php");?>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+		<div id = "product-pager">
+			<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayProductPager.php"); ?>
+		</div>
 	</div>
-	<div class="sellers">
-							<div class="of-left-in">
-								<h3 class="tag">Tags</h3>
-							</div>
-								<div class="tags">
-									<ul>
-										<li><a href="#">design</a></li>
-										<li><a href="#">fashion</a></li>
-										<li><a href="#">lorem</a></li>
-										<li><a href="#">dress</a></li>
-										<li><a href="#">fashion</a></li>
-										<li><a href="#">dress</a></li>
-										<li><a href="#">design</a></li>
-										<li><a href="#">dress</a></li>
-										<li><a href="#">design</a></li>
-										<li><a href="#">fashion</a></li>
-										<li><a href="#">lorem</a></li>
-										<li><a href="#">dress</a></li>
-
-										<div class="clearfix"> </div>
-									</ul>
-
-								</div>
-
-		</div>
-				<!---->
-
-				<!--Best Seller-->
-				<div class="product-bottom">
-					<div class="of-left-in">
-								<h3 class="best">Best Sellers</h3>
-							</div>
-					<div class="product-go">
-						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/p1.jpg" alt=""></a>
-
-								</div>
-							<div class=" fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sitamet consectetuer  </a></h6>
-
-								<span class=" price-in1"> $40.00</span>
-							</div>
-
-							<div class="clearfix"> </div>
-					</div>
-					<div class="product-go">
-						<div class=" fashion-grid">
-									<a href="single.html"><img class="img-responsive " src="images/p2.jpg" alt=""></a>
-
-								</div>
-							<div class="fashion-grid1">
-								<h6 class="best2"><a href="single.html" >Lorem ipsum dolor sitamet consectetuer </a></h6>
-								<span class=" price-in1"> $40.00</span>
-							</div>
-
-							<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- End of Best Seller-->
-				<!-- Discount-->
-				<div class=" per1">
-					<a href="single.html" ><img class="img-responsive" src="images/pro.jpg" alt="">
-					<div class="six1">
-						<h4>DISCOUNT</h4>
-						<p>Up to</p>
-						<span>60%</span>
-					</div></a>
-				</div>
-				<!-- end of Discount-->
-		</div>
-		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/Method/displayProductList.php");?>
-		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/Method/displayProductPager.php"); ?>
+</div>
 
 <!--//content-->
 <div class="footer">
@@ -349,6 +284,5 @@ and promo</p>
 		</div>
 		</div>
 		<!--test Area-->
-
 </body>
 </html>

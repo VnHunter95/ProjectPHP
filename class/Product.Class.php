@@ -47,7 +47,18 @@
         $res=$db->select_to_array($sql);
         return $res;
       }
-      //Get $quantity New Products
+      //Get Product List by Tag
+      public static function list_product_by_tag($tagId,$page,$productPerPage)
+      {
+        $db= new Db();
+        $startIndex = ($productPerPage*($page-1));
+        $sql = "SELECT p.* FROM product p , tag t , product_tag pt "
+              ." WHERE p.product_id = pt.product_id AND t.tag_id = pt.tag_id AND t.tag_id = ".$tagId
+              ." ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
+      // get list new product with page
       public static function list_new_product($quantity)
       {
         $db= new Db();
@@ -87,7 +98,7 @@
         $res=$db->select_to_array($sql);
         if($res==false)
         {
-          $res=$this->searchByTag($input);
+          $res=Product::searchByTag($input);
         }
         return $res;
       }
@@ -144,6 +155,8 @@
         $res=$db->select_to_array($sql);
         return $res;
       }
+      #Get product depend on number of product per page
+      # @params $limit - number of product that return
       public static function listProductWithLimit($limit)
       {
         $db= new Db();
@@ -151,6 +164,10 @@
         $res=$db->select_to_array($sql);
         return $res;
       }
+      #Calculate page count of product by group and number of product per page
+      # @pagrams $groupId
+      # @pagrams $productPerPage
+      # @return  $pageCount - number of page
       public static function getProductByGroupPageCount($groupId,$productPerPage)
       {
         $db = new DB();
@@ -160,10 +177,29 @@
         $pageCount  = intval($pageCount);
         return $pageCount;
       }
+      #Calculate page count of product by supplier and number of product per page
+      # @pagrams $supplierId
+      # @pagrams $productPerPage
+      # @return  $pageCount - number of page
       public static function getProductBySupplierPageCount($supplierId,$productPerPage)
       {
         $db = new DB();
         $res = $db->query_execute("SELECT COUNT(*) as rowCount FROM product WHERE supplier_id = '".$supplierId."'");
+        $rowCount = $res->fetch_row();
+        $pageCount =  ( $rowCount[0] / $productPerPage ) + 1;
+        $pageCount = intval($pageCount);
+        return $pageCount;
+      }
+      #Calculate page count of product by supplier and number of product per page
+      # @pagrams $supplierId
+      # @pagrams $productPerPage
+      # @return  $pageCount - number of page
+      public static function getProductByTagPageCount($tagId,$productPerPage)
+      {
+        $db = new DB();
+        $sql = "SELECT COUNT(*) FROM product p , tag t , product_tag pt "
+              ." WHERE p.product_id = pt.product_id AND t.tag_id = pt.tag_id AND t.tag_id = ".$tagId;
+        $res = $db->query_execute($sql);
         $rowCount = $res->fetch_row();
         $pageCount =  ( $rowCount[0] / $productPerPage ) + 1;
         $pageCount = intval($pageCount);

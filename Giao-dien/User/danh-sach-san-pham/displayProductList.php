@@ -1,9 +1,11 @@
-<div class="col-md-9 product1">
 <?php
     $pageCount;
     $products;
-    $page = $_GET["page"];
-    if(isset($_GET["groupid"])&&isset($_GET["page"]))
+    if(isset($_GET['page']))
+    {
+      $page = $_GET['page'];
+    }
+    if(isset($_GET["groupid"]))
     {
       $groupid=$_GET["groupid"];
       $products = Product::list_product_by_group($groupid,$page,9);
@@ -13,9 +15,13 @@
       $supid=$_GET['supplierid'];
       $products = Product::list_product_by_supplier($supid,$page,9);
       $pageCount = Product::getProductBySupplierPageCount($supid,9);
+    }else if(isset($_GET['tagid'])){
+      $tagid=$_GET['tagid'];
+      $products = Product::list_product_by_tag($tagid,$page,9);
+      $pageCount = Product::getProductByTagPageCount($tagid,9);
     }
     else {
-      $products=Product::listProductWithLimit(18);
+      $products=Product::list_popular_product(18);
     }
     //Code inflate product layout
     if(isset($products))
@@ -50,19 +56,3 @@
       }
     }
 ?>
-<!--Code from template
-  <div class=" bottom-product"> 			bottom-product - 3 products inline
-  <div class="col-md-4 bottom-cd simpleCart_shelfItem">
-    <div class="product-at ">
-      <a href="single.html"><img class="img-responsive" src="images/pi5.jpg" alt=""> product_image
-      <div class="pro-grid">
-            <span class="buy-in">Buy Now</span> Add to cart
-      </div>
-    </a>
-    </div>
-    <p class="tun">It is a long established fact that a reader</p> short description
-<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-</div>
-</div> -->
-</div>
-<div class="clearfix"> </div>
