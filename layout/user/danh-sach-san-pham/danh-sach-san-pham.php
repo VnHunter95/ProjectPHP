@@ -202,7 +202,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="col-md-3 product-price">
 		<!--Display Category - Product Group-->
-		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayCategoryLeftSide.php");?>
+		<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayCategoryLeftSide.php");?>
 		<!--initiate accordion-->
 		<script type="text/javascript">
 			$(function() {
@@ -224,16 +224,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 <!-- TAG -->
-		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayTagLeftSide.php");?>
+		<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayTagLeftSide.php");?>
 		</div>
 		<div class="col-md-9 product1">
 			<div id = "product-list">
-				<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayProductList.php");?>
+				<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayProductList.php");?>
 			</div>
 		</div>
 		<div class="clearfix"> </div>
 		<div id = "product-pager">
-			<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/danh-sach-san-pham/displayProductPager.php"); ?>
+			<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayProductPager.php"); ?>
 		</div>
 	</div>
 </div>

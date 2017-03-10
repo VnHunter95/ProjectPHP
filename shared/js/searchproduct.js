@@ -44,7 +44,7 @@ function searchProduct(searchType, input,page,produtPerPage)
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://localhost:5454/giao-dien/user/danh-sach-san-pham/gererateResultProductXML.php?searchType="+searchType+"&input="+input+"&page="+page+"&produtPerPage="+produtPerPage;
+    var url = "http://localhost:5454/layout/user/danh-sach-san-pham/gererateResultProductXML.php?searchType="+searchType+"&input="+input+"&page="+page+"&produtPerPage="+produtPerPage;
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponse;
     xmlHttp.send(null);
