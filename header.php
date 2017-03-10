@@ -202,7 +202,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<ul class="rslides" id="slider">
 				<?php
 
-					include($_SERVER['DOCUMENT_ROOT'].'/Giao-dien/User/Method/getBanner.php');
+					include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getBanner.php');
 					$banners = getBanner();
 					foreach( $banners as $item){
 						echo "<li><img src='/banner/".$item["banner_image_filename"]."' alt='Banner Image' class='img-responsive' style='width:100%; height:100%'></li>";

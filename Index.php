@@ -1,17 +1,17 @@
 <?php include_once("header.php");?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/Giao-dien/User/Method/getProduct.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProduct.php');?>
 <!--content-->
 <div class="content">
 	<div class="container">
 	<div class="content-top">
 		<h1>NEW RELEASED</h1>
-		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/Method/displayNewProduct.php");?>
+		<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/method/displayNewProduct.php");?>
 	</div>
 	<!----->
 
 	<div class="content-top-bottom">
 		<h2>Featured Collections</h2>
-		<?php include($_SERVER['DOCUMENT_ROOT']."/Giao-dien/User/Method/displayFeatured.php");?>
+		<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/method/displayFeatured.php");?>
 		<div class="clearfix"> </div>
 	</div>
 	</div>
