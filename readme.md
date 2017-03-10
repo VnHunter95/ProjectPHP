@@ -37,11 +37,16 @@ Nếu push lên rồi mà có thiếu sót cần chỉnh sửa thêm thì phải
 
 ## Hướng dẫn project
 
+Các task chức năng nằm trong đây :
+
+https://docs.google.com/spreadsheets/d/1XnPNzcEc-Vf9zgvdxL6Vz9W-zROr261tizqXcVSeWwM/edit#gid=0
+
 Project sau khi clone về thì đưa vào thư mục htdoc của xampp . Mặc định C:\xampp\htdocs . 
 
 Tạo folder riêng đặt tên theo tên giao diện trong User/Method hoặc Admin/Method . Trong đó chứa các hàm,phương thức dùng riêng cho giao diện đó .
 
 **Không viết code vào folder khác không phải của mình **
+
 Index.php là trang chủ
 
 Trong doc chứa các tài liệu liên quan tới project
@@ -52,7 +57,6 @@ admin đang xây dựng
 
 ## Note
 Tên file giao diện .php : Viết thường,phải có gạch nối giữa các từ . Phải viết tiếng việt(Trừ trang chủ tên mặc định là index)
-
 
 ```danh-sach-san-pham , chi-tiet-san-pham ```
 
@@ -65,14 +69,15 @@ Tên biến,phương thức : Viết tiếng anh,chữ cái đầu tiên của t
 ```$productId , $productName ,$count , $createCustomer , $deleteCustomer , $update```
 
 Các biến kiểu Boolean phải bắt đầu bằng chữ ‘is’
+
 ```$isDead , isDefault ```
 
 Các biến kiểu mảng phải là từ số nhiều ( có s hoặc es cuối từ)
- 
+
 ```$products , customers , suppliers ```
 
-
 Các hàm lấy giá trị phải có chữ bắt đầu bằng từ get , gắn giá trị bắt đầu bằng từ set
+
 ```$getUserName , $getAge , $setPrice , $setGender```
 
 SQL Query : Các câu lệnh sql ngoài tên bảng,trường ra thì luôn phải viết hoa toàn từ . 
