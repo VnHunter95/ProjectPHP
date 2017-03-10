@@ -13,7 +13,7 @@
           $groups = ProductGroup::list_product_group();
           foreach($groups as $item)
           {
-            echo "<li class='subitem1'><a href='".strtok($_SERVER['REQUEST_URI'],"?")."?groupid=".$item['product_group_id']."&page=1'>".$item['product_group_name']."</a></li>";
+            echo "<li class='subitem1'><a onclick='goToProductList(1,".$item['product_group_id'].")'>".$item['product_group_name']."</a></li>";
           }
         ?>
           </ul>
@@ -24,7 +24,7 @@
               $suppilers = Supplier::list_supplier();
               foreach($suppilers as $item)
               {
-                echo "<li class='subitem1'><a href='".strtok($_SERVER['REQUEST_URI'],"?")."?supplierid=".$item['supplier_id']."&page=1'>".$item['supplier_name']."</a></li>";
+                echo "<li class='subitem1'><a onclick='goToProductList(2,".$item['supplier_id'].")'>".$item['supplier_name']."</a></li>";
               }
             ?>
           </ul>
