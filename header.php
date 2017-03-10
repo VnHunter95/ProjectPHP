@@ -1,215 +1,228 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
-<link href="/shared/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/shared/js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="/shared/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--fonts-->
-<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
-<!-- start menu -->
-<link href="/shared/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="/shared/js/memenu.js"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>
-<script src="/shared/js/simpleCart.min.js"> </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Products :: w3layouts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link href="shared/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="shared/css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <link href="shared/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="shared/js/jquery.min.js"></script>    
+	<script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <script src="shared/js/memenu.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () { $(".memenu").memenu(); });
+    </script>
+    <script src="shared/js/simpleCart.min.js"></script>
 </head>
-<body>
-<!--header-->
-<div class="header">
-	<div class="header-top">
-		<div class="container">
-			<div class="search">
-					<form>
-						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-						<input type="submit" value="Go">
-					</form>
-			</div>
-			<div class="header-left">
-					<ul>
-						<li ><a href="login.html"  >Login</a></li>
-						<li><a  href="register.html"  >Register</a></li>
 
-					</ul>
-					<div class="cart box_1">
-						<a href="checkout.html">
-						<h3> <div class="total">
-							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-							<img src="images/cart.png" alt=""/></h3>
-						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+<body class="parallax">
+    <!--navbar-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="logo">
+                    <!--<a href="index.html"><img src="image/logo.png" alt=""></a>-->
+                </div>
+            </div>
+            <ul class="nav navbar-nav">
 
-					</div>
-					<div class="clearfix"> </div>
-			</div>
-				<div class="clearfix"> </div>
-		</div>
-		</div>
-		<div class="container">
-			<div class="head-top">
-				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""></a>
-				</div>
-		  <div class=" h_menu4">
-				<ul class="memenu skyblue">
-					  <li class="active grid"><a class="color8" href="index.html">Home</a></li>
-				      <li><a class="color1" href="#">Men</a>
-				      	<div class="mepanel">
-						<div class="row">
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="products.html">Accessories</a></li>
-										<li><a href="products.html">Bags</a></li>
-										<li><a href="products.html">Caps & Hats</a></li>
-										<li><a href="products.html">Hoodies & Sweatshirts</a></li>
-										<li><a href="products.html">Jackets & Coats</a></li>
-										<li><a href="products.html">Jeans</a></li>
-										<li><a href="products.html">Jewellery</a></li>
-										<li><a href="products.html">Jumpers & Cardigans</a></li>
-										<li><a href="products.html">Leather Jackets</a></li>
-										<li><a href="products.html">Long Sleeve T-Shirts</a></li>
-										<li><a href="products.html">Loungewear</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="products.html">Shirts</a></li>
-										<li><a href="products.html">Shoes, Boots & Trainers</a></li>
-										<li><a href="products.html">Shorts</a></li>
-										<li><a href="products.html">Suits & Blazers</a></li>
-										<li><a href="products.html">Sunglasses</a></li>
-										<li><a href="products.html">Sweatpants</a></li>
-										<li><a href="products.html">Swimwear</a></li>
-										<li><a href="products.html">Trousers & Chinos</a></li>
-										<li><a href="products.html">T-Shirts</a></li>
-										<li><a href="products.html">Underwear & Socks</a></li>
-										<li><a href="products.html">Vests</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>Popular Brands</h4>
-									<ul>
-										<li><a href="products.html">Levis</a></li>
-										<li><a href="products.html">Persol</a></li>
-										<li><a href="products.html">Nike</a></li>
-										<li><a href="products.html">Edwin</a></li>
-										<li><a href="products.html">New Balance</a></li>
-										<li><a href="products.html">Jack & Jones</a></li>
-										<li><a href="products.html">Paul Smith</a></li>
-										<li><a href="products.html">Ray-Ban</a></li>
-										<li><a href="products.html">Wood Wood</a></li>
-									</ul>
-								</div>
-							</div>
-						  </div>
-						</div>
-					</li>
-				    <li class="grid"><a class="color2" href="#">	Women</a>
-					  	<div class="mepanel">
-						<div class="row">
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="products.html">Accessories</a></li>
-										<li><a href="products.html">Bags</a></li>
-										<li><a href="products.html">Caps & Hats</a></li>
-										<li><a href="products.html">Hoodies & Sweatshirts</a></li>
-										<li><a href="products.html">Jackets & Coats</a></li>
-										<li><a href="products.html">Jeans</a></li>
-										<li><a href="products.html">Jewellery</a></li>
-										<li><a href="products.html">Jumpers & Cardigans</a></li>
-										<li><a href="products.html">Leather Jackets</a></li>
-										<li><a href="products.html">Long Sleeve T-Shirts</a></li>
-										<li><a href="products.html">Loungewear</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="products.html">Shirts</a></li>
-										<li><a href="products.html">Shoes, Boots & Trainers</a></li>
-										<li><a href="products.html">Shorts</a></li>
-										<li><a href="products.html">Suits & Blazers</a></li>
-										<li><a href="products.html">Sunglasses</a></li>
-										<li><a href="products.html">Sweatpants</a></li>
-										<li><a href="products.html">Swimwear</a></li>
-										<li><a href="products.html">Trousers & Chinos</a></li>
-										<li><a href="products.html">T-Shirts</a></li>
-										<li><a href="products.html">Underwear & Socks</a></li>
-										<li><a href="products.html">Vests</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<h4>Popular Brands</h4>
-									<ul>
-										<li><a href="products.html">Levis</a></li>
-										<li><a href="products.html">Persol</a></li>
-										<li><a href="products.html">Nike</a></li>
-										<li><a href="products.html">Edwin</a></li>
-										<li><a href="products.html">New Balance</a></li>
-										<li><a href="products.html">Jack & Jones</a></li>
-										<li><a href="products.html">Paul Smith</a></li>
-										<li><a href="products.html">Ray-Ban</a></li>
-										<li><a href="products.html">Wood Wood</a></li>
-									</ul>
-								</div>
-							</div>
-						  </div>
-						</div>
-			    </li>
-				<li><a class="color4" href="blog.html">Blog</a></li>
-				<li><a class="color6" href="contact.html">Conact</a></li>
-			  </ul>
-			</div>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option value="AL">A</option>
+                        <option value="WY">B</option>
+                    </select>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="lock" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                    <div id="loginModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Đăng nhập</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="tenDN">Tên đăng nhập</label>
+                                        <input type="text" class="form-control" name="tenDN">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Mật khẩu</label>
+                                        <input type="text" class="form-control" name="password">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <label style="float:left">Chưa có tài khoản? <a href="#">Đăng ký</a></label>
+                                    <button type="button" class="btn btn-info">Đăng nhập</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#cartModal"><span class="glyphicon glyphicon-shopping-cart"></span> 2 Sản Phẩm - 360.000 VNĐ</a>
+                    <div id="cartModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog modal-lg">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Giỏ hàng</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <table id="cart" class="table table-hover table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:40%">Product</th>
+                                                <th style="width:20%">Price</th>
+                                                <th style="width:8%">Quantity</th>
+                                                <th style="width:22%" class="text-center">Subtotal</th>
+                                                <th style="width:10%"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--Product 1-->
+                                            <tr>
+                                                <td data-th="Product">
+                                                    <div class="row">
+                                                        <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"
+                                                            /></div>
+                                                        <div class="col-sm-6">
+                                                            <h4 style="max-width: 320px;word-wrap: break-word;">Product 1</h4>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td data-th="Price">180.000 VNĐ</td>
+                                                <td data-th="Quantity">
+                                                    <input type="number" class="form-control text-center" value="1">
+                                                </td>
+                                                <td data-th="Subtotal" class="text-center">180.000 VNĐ</td>
+                                                <td data-th="" class="actions">
+                                                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+                                                </td>
+                                            </tr>
+                                            <!--Product 2-->
+                                            <tr>
+                                                <td data-th="Product">
+                                                    <div class="row">
+                                                        <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"
+                                                            /></div>
+                                                        <div class="col-sm-6">
+                                                            <h4 style="max-width: 320px;word-wrap: break-word;">Product 2</h4>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td data-th="Price">180.000 VNĐ</td>
+                                                <td data-th="Quantity">
+                                                    <input type="number" class="form-control text-center" value="1">
+                                                </td>
+                                                <td data-th="Subtotal" class="text-center">180.000 VNĐ</td>
+                                                <td data-th="" class="actions">
+                                                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="visible-xs">
+                                                <td class="text-center"><strong>Total: 360.000 VNĐ</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td colspan="2" class="hidden-xs"></td>
+                                                <td class="hidden-xs text-center"><strong>Total: 360.000 VNĐ</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-info">Thanh Toán</button>
+                                    <button type="button" class="btn btn-default" style="float:left;">Xóa giỏ hàng</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-				<div class="clearfix"> </div>
-		</div>
-		</div>
+    <!--header-->
+    <div class="container">
 
-	</div>
-	<div class="banner">
-		<div class="container">
-			  <script src="/shared/js/responsiveslides.min.js"></script>
-  <script>
-    $(function () {
-      $("#slider").responsiveSlides({
-      	auto: true,
-      	nav: true,
-      	speed: 500,
-        namespace: "callbacks",
-        pager: true,
-      });
-    });
-  </script>
-			<div  id="top" class="callbacks_container">
-			<ul class="rslides" id="slider">
-				<?php
+        <div class="head-top">
+            <div class=" h_menu4">
+                <ul class="memenu skyblue">
+                    <li><a class="color1" href="#">Men</a>
+                        <div class="mepanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <ul>
+                                            <li><a href="products.html">Accessories</a></li>
+                                            <li><a href="products.html">Bags</a></li>
+                                            <li><a href="products.html">Caps & Hats</a></li>
+                                            <li><a href="products.html">a</a></li>
+                                            <li><a href="products.html">Jc</a></li>
+                                            <li><a href="products.html">Jeans</a></li>
+                                            <li><a href="products.html">Jewellery</a></li>
+                                            <li><a href="products.html">b</a></li>
+                                            <li><a href="products.html">Leather Jackets</a></li>
+                                            <li><a href="products.html">d</a></li>
+                                            <li><a href="products.html">Loungewear</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    </li>
+                    <li class="grid"><a class="color2" href="#">	Women</a>
+                        <div class="mepanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <ul>
+                                            <li><a href="products.html">Accessories</a></li>
+                                            <li><a href="products.html">Bags</a></li>
+                                            <li><a href="products.html">Caps & Hats</a></li>
+                                            <li><a href="products.html">Hoodies & Sweatshirts</a></li>
+                                            <li><a href="products.html">Jackets & Coats</a></li>
+                                            <li><a href="products.html">Jeans</a></li>
+                                            <li><a href="products.html">Jewellery</a></li>
+                                            <li><a href="products.html">Jumpers & Cardigans</a></li>
+                                            <li><a href="products.html">Leather Jackets</a></li>
+                                            <li><a href="products.html">Long Sleeve T-Shirts</a></li>
+                                            <li><a href="products.html">Loungewear</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </div>
 
-					include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getBanner.php');
-					$banners = getBanner();
-					foreach( $banners as $item){
-						echo "<li><img src='/banner/".$item["banner_image_filename"]."' alt='Banner Image' class='img-responsive' style='width:100%; height:100%'></li>";
-					}
-				?>
-			</ul>
-		</div>
-
-	</div>
-</div>
+                <div class="clearfix"> </div>
+                </div>
+            
