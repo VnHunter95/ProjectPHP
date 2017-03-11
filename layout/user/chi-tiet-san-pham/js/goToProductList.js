@@ -1,6 +1,6 @@
 function goToProductList(type,id)
 {
-  var url = 'http://'+window.location.host + '/layout/user/danh-sach-san-pham/danh-sach-san-pham.php'
+  var url = 'http://'+window.location.host + '/layout/user/danh-sach-san-pham.php'
   switch(type)
   {
     case 1:

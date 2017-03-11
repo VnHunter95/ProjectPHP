@@ -33,7 +33,7 @@
         echo ($loop == 1) ? "\n<div class='bottom-product'>": "";
         echo "\n<div class='col-md-4 bottom-cd simpleCart_shelfItem'>"
               ."\n<div class='product-at'>"
-                ."\n<a href='single.html'><img class='img-responsive' src='/shared/image/".$image."' alt='Product Image' style='withd:300px; height:300px;  margin: 0 auto;>' >"
+                ."\n<a href='/layout/user/chi-tiet-san-pham.php?productid=".$item['product_id']."'><img class='img-responsive' src='/shared/image/".$image."' alt='Product Image' style='withd:300px; height:300px;  margin: 0 auto;>' >"
                   ."\n<div class='pro-grid'>"
                       ."\n<span class='buy-in'>Mua Ngay</span>"
                   ."\n</div>"

@@ -208,7 +208,7 @@
       public static function getProductById($id)
       {
         $db = new DB();
-        $sql = "SELECT * FROM product p , tag t , product_tag pt "
+        $sql = "SELECT * FROM product p"
               ." WHERE p.product_id =".$id;
         $res = $db->select_to_array($sql);
         if($res != false)
