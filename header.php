@@ -23,6 +23,7 @@
         $(document).ready(function () { $(".memenu").memenu(); });
     </script>
     <script src="shared/js/simpleCart.min.js"></script>
+    <script src="/shared/js/login.js"></script>
 </head>
 
 <body class="parallax">
@@ -53,35 +54,7 @@
                   </div>
               </form>
               <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a class="lock" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-                      <div id="loginModal" class="modal fade" role="dialog">
-                          <div class="modal-dialog">
-                              <!-- Modal content-->
-                              <div class="modal-content">
-                                  <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <h4 class="modal-title">Đăng nhập</h4>
-                                  </div>
-                                  <div class="modal-body">
-                                      <div class="form-group">
-                                          <label for="tenDN">Tên đăng nhập</label>
-                                          <input type="text" class="form-control" name="tenDN">
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="password">Mật khẩu</label>
-                                          <input type="text" class="form-control" name="password">
-                                      </div>
-                                  </div>
-                                  <div class="modal-footer">
-                                      <label style="float:left">Chưa có tài khoản? <a href="#">Đăng ký</a></label>
-                                      <button type="button" class="btn btn-info">Đăng nhập</button>
-                                      <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
+                  <?php include('index/displayLoginButton.php');?>
                   <li>
                       <a href="#" data-toggle="modal" data-target="#cartModal"><span class="glyphicon glyphicon-shopping-cart"></span> 2 Sản Phẩm - 360.000 VNĐ</a>
                       <div id="cartModal" class="modal fade" role="dialog">
