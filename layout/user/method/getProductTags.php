@@ -1,6 +1,6 @@
 <?php
   require_once($_SERVER['DOCUMENT_ROOT'].'/class/Tag.Class.php');
-  function getProductTag($id)
+  function getProductTags($id)
   {
     $tagIds = Tag::getTagOfProduct($id);
     if($tagIds == false || count($tagIds) == 0 )

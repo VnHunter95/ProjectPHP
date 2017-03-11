@@ -1,25 +1,26 @@
 <?php
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductTag.php') ;
-  $productTags = getProductTag($prod[0]['product_id']);
+  include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductTags.php') ;
+  include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductImages.php') ;
+  $productTags = getProductTags($prod[0]['product_id']);
+  $productImages = getProductImages($prod[0]['product_id']);
 ?>
 <div class="col-md-9 product-price1">
   <div class="col-md-5 single-top">
-      <div class="flexslider">
-          <ul class="slides">
-            <li data-thumb="/doc/design/layoutimage/si.jpg">
-              <img src="/doc/design/layoutimage/si.jpg" />
-            </li>
-            <li data-thumb="/doc/design/layoutimage/si1.jpg">
-              <img src="/doc/design/layoutimage/si1.jpg" />
-            </li>
-            <li data-thumb="/doc/design/layoutimage/si2.jpg">
-              <img src="/doc/design/layoutimage/si2.jpg" />
-            </li>
-            <li data-thumb="/doc/design/layoutimage/si.jpg">
-              <img src="/doc/design/layoutimage/si.jpg" />
-            </li>
-          </ul>
-      </div>
+    <div class="flexslider">
+      <ul class="slides">
+        <?php
+          if($productImages!=null)
+          {
+            foreach ($productImages as $item)
+            {
+              echo '<li data-thumb="/shared/image/'.$item.'">'
+                    .'<img src="/shared/image/'.$item.'" />'
+                  .'</li>';
+            }
+          }
+        ?>
+      </ul>
+    </div>
       <!-- FlexSlider -->
       <script defer src="/shared/js/jquery.flexslider.js"></script>
       <link rel="stylesheet" href="/shared/css/flexslider.css" type="text/css" media="screen" />
@@ -41,17 +42,19 @@
       <p><?php echo $prod[0]['description'];?></p>
       <ul class="tag-men">
         <li><span>TAG</span>
-          <?php
-            if($productTags != false)
-            {
-              foreach($productTags as $item){
-                echo '<span class="women1">: '.$item.',</span>';
-              }
-            }
-          ?>
-        </li>
-      </ul>
-      <a href="#" class="add-cart item_add">Thêm Giỏ Hàng</a>
+          <span class="women1">:
+              <?php
+                if($productTags != false)
+                {
+                  foreach($productTags as $item){
+                    echo  ' '.$item.', ';
+                  }
+                }
+              ?>
+          </span>
+       </li>
+     </ul>
+     <a href="#" class="add-cart item_add">Thêm Giỏ Hàng</a>
     </div>
   </div>
   <div class="clearfix"></div>

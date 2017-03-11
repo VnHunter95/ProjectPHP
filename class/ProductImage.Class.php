@@ -27,6 +27,21 @@
       reset($res);
       return $res[0]['image_filename'];
     }
+    public static function getImagesofProduct($productId)
+    {
+      $db = new DB();
+      $sql = "SELECT i.image_id FROM image i,product_image p_i , Product p WHERE p_i.product_id = p.product_id AND i.image_id=p_i.image_id AND p_i.product_id = ".$productId ;
+      $result = $db->select_to_array($sql);
+      return $result;
+    }
+    public static function getImageFilename($imageId)
+    {
+      $db = new DB();
+      $sql = "SELECT image_filename from IMAGE WHERE image_id = ".$imageId;
+      $result = $db->select_to_array($sql);
+      reset($result);
+      return $result[0]['image_filename'];
+    }
   }
 
 
