@@ -28,7 +28,6 @@ function login()
 {
   var user = document.getElementById("usernameLogin").value;
   var password = document.getElementById("passwordLogin").value;
-
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
@@ -54,9 +53,14 @@ function handleServerResponse()
         case '1':
           alert('GG U HAXED DIS WEBUSAITO !');
           $('#loginModal').modal('hide');
+          location.reload();
           break;
         case '2':
           alert('Login FAILED BITCH');
+          break;
+        case '0':
+          alert('Loging out !');
+          location.reload();
           break;
         default:
           alert('Unkown Error');
@@ -68,9 +72,17 @@ function handleServerResponse()
     }
   }
 }
-function hideLoginButton()
+
+function logout()
 {
-  document.getElementById('helloUser').style.visibility = "hidden";
-  document.getElementById('logoutButton').style.visibility = "visible";
-  document.getElementById('loginButton').style.visibility = "hidden";
+  if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
+  {
+    var root = document.location.hostname;
+    var url = "http://localhost:5454/index/doLogout.php";
+    xmlHttp.open("GET",url, true);
+    xmlHttp.onreadystatechange = handleServerResponse;
+    xmlHttp.send(null);
+  }else{
+    setTimeout("searchProduct()",1000);
+  }
 }

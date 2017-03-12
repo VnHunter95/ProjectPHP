@@ -8,5 +8,5 @@
     </a>
 </li>
 <li id= "logoutButton">
-    <a class="lock" href="#">Đăng Xuất</a>
+    <a class="lock" onclick="logout()" style="cursor: pointer;">Đăng Xuất</a>
 </li>
