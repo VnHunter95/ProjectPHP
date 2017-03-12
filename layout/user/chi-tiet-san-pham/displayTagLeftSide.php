@@ -9,7 +9,7 @@
                   $tags = Tag::getTagList();
                   foreach($tags as $item)
                   {
-                    echo '<li><a onclick="goToProductList(3,'.$item['tag_id'].')">'.$item['tag_name'].'</a></li>'."\n";
+                    echo '<li><a onclick="goToProductList(3,'.$item['tag_id'].')" style="cursor: pointer;">'.$item['tag_name'].'</a></li>'."\n";
                   }
                 ?>
                 <div class="clearfix"> </div>

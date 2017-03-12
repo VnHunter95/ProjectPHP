@@ -1,8 +1,8 @@
 <?php
   include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductTags.php') ;
   include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductImages.php') ;
-  $productTags = getProductTags($prod[0]['product_id']);
-  $productImages = getProductImages($prod[0]['product_id']);
+  $productTags = getProductTags($id);
+  $productImages = getProductImages($id);
 ?>
 <div class="col-md-9 product-price1">
   <div class="col-md-5 single-top">
@@ -47,7 +47,7 @@
                 if($productTags != false)
                 {
                   foreach($productTags as $item){
-                    echo  ' '.$item.', ';
+                    echo  ' '.TAG::getTagName($item['tag_id']).', ';
                   }
                 }
               ?>
@@ -118,40 +118,5 @@
       <div class="clearfix"></div>
     </ul>
   </div>
-  <div class=" bottom-product">
-        <div class="col-md-4 bottom-cd simpleCart_shelfItem">
-          <div class="product-at ">
-            <a href="#"><img class="img-responsive" src="/doc/design/layoutimage/pi3.jpg" alt="">
-            <div class="pro-grid">
-                  <span class="buy-in">Buy Now</span>
-            </div>
-          </a>
-          </div>
-          <p class="tun">It is a long established fact that a reader</p>
-          <a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-        </div>
-        <div class="col-md-4 bottom-cd simpleCart_shelfItem">
-          <div class="product-at ">
-            <a href="#"><img class="img-responsive" src="/doc/design/layoutimage/pi1.jpg" alt="">
-            <div class="pro-grid">
-                  <span class="buy-in">Buy Now</span>
-            </div>
-            </a>
-          </div>
-          <p class="tun">It is a long established fact that a reader</p>
-          <a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-        </div>
-        <div class="col-md-4 bottom-cd simpleCart_shelfItem">
-          <div class="product-at ">
-            <a href="#"><img class="img-responsive" src="/doc/design/layoutimage/pi4.jpg" alt="">
-            <div class="pro-grid">
-                  <span class="buy-in">Buy Now</span>
-            </div>
-            </a>
-          </div>
-          <p class="tun">It is a long established fact that a reader</p>
-          <a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
-        </div>
-          <div class="clearfix"> </div>
-  </div>
+  <?php include('chi-tiet-san-pham/displayRelatedProducts.php');?>
 </div>

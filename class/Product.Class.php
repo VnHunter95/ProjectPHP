@@ -217,6 +217,27 @@
         }
         return $res;
       }
+      #Get list of products that has $tags in it
+      #Limit to 3 products
+      # @pagrams $tags - list of tags belong to the other product
+      public static function getRelatedProducts($tags,$productId)
+      {
+        if(count($tags)==0||$tags == false)
+        {
+          return false;
+        }
+        $db = new DB();
+        $values = "";
+        foreach($tags as $item)
+        {
+          $values = $values."'".$item['tag_id']."'";
+        }
+        $values = " IN (".$values.")";
+        $sql = "SELECT DISTINCT p.* FROM product p,product_tag pt"
+              ." WHERE p.product_id = pt.product_id and p.product_id != ".$productId." and pt.tag_id ".$values." ORDER BY p.number_sold DESC LIMIT 3 ";
+        $res = $db->select_to_array($sql);
+        return $res;
+      }
     }
 
 ?>

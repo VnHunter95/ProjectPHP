@@ -10,7 +10,7 @@
       $tagNames = array();
       foreach($tagIds as $item)
       {
-        $tagNames[] = Tag::getTagName($item['tag_id']);
+        $tagNames[] = $item;
       }
       return $tagNames;
     }
