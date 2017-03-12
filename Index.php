@@ -32,17 +32,19 @@
 <div class="content">
     <div class="container">
         <div class="content-top">
-            <h1>NEW RELEASED</h1>
-            <?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/method/displayNewProduct.php");?>
+            <h1>Sản Phẩm Mới</h1>
+            <?php include("index/displayNewProduct.php");?>
         </div>
         <!----->
 
         <div class="content-top-bottom">
-            <h2>Featured Collections</h2>
-            <?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/method/displayFeatured.php");?>
+            <h2>Sản Phẩm Hot</h2>
+            <?php include("index/displayFeatured.php");?>
             <div class="clearfix"> </div>
         </div>
     </div>
     <!---->
 </div>
+<br>
+<br>
 <?php include_once("footer.php");?>

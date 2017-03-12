@@ -11,7 +11,7 @@
   }
 ?>
 <div class="col-md-6 men">
-  <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img src="/shared/image/<?php echo $filenames[0]?>" alt=""  style='display: block;max-width: 100%; max-height: 429px; margin: 0 auto;'>
+  <a href="/layout/user/chi-tiet-san-pham.php?productid=<?php echo $list[0]['product_id'] ?>" class="b-link-stripe b-animate-go  thickbox"><img src="/shared/image/<?php echo $filenames[0]?>" alt=""  style='display: block;max-width: 100%; max-height: 429px; margin: 0 auto;'>
     <div class="b-wrapper">
               <h3 class="b-animate b-from-top top-in   b-delay03 ">
                 <span><font size='4'><?php echo $list[0]['product_name']?></font></span>
@@ -22,7 +22,7 @@
 <div class="col-md-6">
   <div class="col-md3">
     <div class="col-md-6 men1">
-      <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[1]?>" alt="" style='block;max-width: 100%; max-height: 196px; margin: 0 auto; '>
+      <a href="/layout/user/chi-tiet-san-pham.php?productid=<?php echo $list[1]['product_id'] ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[1]?>" alt="" style='block;max-width: 100%; max-height: 196px; margin: 0 auto; '>
           <div class="b-wrapper">
               <h3 class="b-animate b-from-top top-in2   b-delay03 ">
                 <span><font size='4'><?php echo $list[1]['product_name']?></font></span>
@@ -31,7 +31,7 @@
       </a>
     </div>
     <div class="col-md-6 men1">
-      <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[2]?>" alt="" style='block;max-width: 100%; max-height: 196px; margin: 0 auto; '>
+      <a href="/layout/user/chi-tiet-san-pham.php?productid=<?php echo $list[2]['product_id'] ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[2]?>" alt="" style='block;max-width: 100%; max-height: 196px; margin: 0 auto; '>
           <div class="b-wrapper">
               <h3 class="b-animate b-from-top top-in2   b-delay03 ">
                 <span><font size='4'><?php echo $list[2]['product_name']?></font></span>
@@ -42,7 +42,7 @@
   </div>
   <div class="col-md3">
     <div class="col-md-6 men1">
-      <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[3]?>" alt="" style='block;max-width: 100%; max-height: 196px; margin: 0 auto; '>
+      <a href="/layout/user/chi-tiet-san-pham.php?productid=<?php echo $list[3]['product_id'] ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[3]?>" alt="" style='block;max-width: 100%; max-height: 196px; margin: 0 auto; '>
           <div class="b-wrapper">
               <h3 class="b-animate b-from-top top-in2   b-delay03 ">
                 <span><font size='4'><?php echo $list[3]['product_name']?></font></span>
@@ -51,7 +51,7 @@
       </a>
     </div>
     <div class="col-md-6 men1">
-      <a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[4]?>" alt=""  style='block;max-width: 100%; max-height: 196px ; margin: 0 auto;'>
+      <a href="/layout/user/chi-tiet-san-pham.php?productid=<?php echo $list[4]['product_id'] ?>" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="/shared/image/<?php echo $filenames[4]?>" alt=""  style='block;max-width: 100%; max-height: 196px ; margin: 0 auto;'>
           <div class="b-wrapper">
               <h3 class="b-animate b-from-top top-in2   b-delay03 ">
                 <span><font size='4'><?php echo $list[4]['product_name']?></font></span>

@@ -74,7 +74,7 @@
       public static function list_popular_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product ORDER BY number_sold ";
+        $sql = "SELECT * FROM product ORDER BY number_sold DESC";
         if($quantity!=0)
         {
           $sql =$sql." LIMIT ".$quantity."";
