@@ -800,7 +800,7 @@ p.m_11 {
 .tags ul li {
 	display: inline-block;
 	float:left;
-	    width: 22.8%;
+	/*width: 22.8%;*/
   margin: 0.5em 2% 0 0;
   text-align: center;
 }
@@ -818,9 +818,9 @@ p.m_11 {
 	border: 1px solid #EF5F21;
 }
 
-.tags ul li:nth-child(4),.tags ul li:nth-child(8),.tags ul li:nth-child(12){
+/*.tags ul li:nth-child(4),.tags ul li:nth-child(8),.tags ul li:nth-child(12){
 	margin:0.5em 0 0;
-}
+}*/
 /*----*/
 h3.cate {
 	color: #000;
@@ -1783,6 +1783,15 @@ ul.qty li p{
 @media(max-width:1280px){
 	
 }
+@media(max-width:991px){
+		.tags ul li {
+		display: inline-block;
+		float:left;
+		width: 22.8%;
+		margin: 0.5em 2% 0 0;
+		text-align: center;
+	}
+}
 @media(max-width:1024px){
 .banner-text {
   width: 70%;
@@ -1923,7 +1932,7 @@ h6.best2 {
 /*--product--*/
 .bottom-cd{
 float:left;
-width:33.3%;
+width:100%;
 }
 .product-price {
   width: 50%;
