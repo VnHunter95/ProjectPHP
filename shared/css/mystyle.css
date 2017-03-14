@@ -7,7 +7,7 @@
     /*background-image: url("../../shared/image/wallpaper.jpg");*/
 
     /* Set a specific height */
-    min-height: 500px; 
+    min-height: 500px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -25,7 +25,7 @@
 		width:36%;
 		margin:1.5em 0;
 	}
-	
+
 	.actions .btn-info{
 		float:left;
 	}
@@ -41,13 +41,16 @@
 		content: attr(data-th); font-weight: bold;
 		display: inline-block; width: 8rem;
 	}
-	
+
 	table#cart tfoot td{display:block; }
 	table#cart tfoot td .btn{display:block;}
-	
+
 }
 .navbar-inverse .navbar-nav > li > a {
   color: #ffffff;
+}
+.navbar {
+  margin-bottom: : 0px;
 }
 /*
 .navbar-inverse {

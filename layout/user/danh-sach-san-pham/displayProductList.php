@@ -5,6 +5,11 @@
     {
       $page = $_GET['page'];
     }
+    if(isset($_GET['searchType'])&&isset($_GET['searchInput'])){
+      $searchType = $_GET['searchType'];
+      $searchInput = $_GET['searchInput'];
+      echo '<script type="text/javascript">searchProduct('.$searchType.',"'.$searchInput.'",1,9)</script>';
+    }
     if(isset($_GET["groupid"]))
     {
       $groupid=$_GET["groupid"];
@@ -21,7 +26,13 @@
       $pageCount = Product::getProductByTagPageCount($tagid,9);
     }
     else {
+      if(!isset($_GET['searchType']))
+      {
       $products=Product::list_popular_product(18);
+    }else {
+      $products = null;
+    }
+
     }
     //Code inflate product layout
     if(isset($products))

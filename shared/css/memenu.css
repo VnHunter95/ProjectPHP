@@ -4,7 +4,7 @@
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-	
+
 
 }
 .memenu>li.active>a{color:#00405d;}
@@ -45,7 +45,7 @@
 .memenu>li.active>a {
 color:#EF5F21;
 
-}	
+}
 .skyblue li>a,.skyblue>li.showhide span{color:#000}
 .skyblue>li:hover>a,.skyblue .dropdown li:hover>a{color:#555; background:#ffffff;}.
 skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skyblue form.contact textarea:focus{}
@@ -118,11 +118,11 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 /* start memenu colors */
 
 .skyblue li a.color1:hover{
-	background:#EF5F21;
+	background:#bababa;
 	color: #ffffff;
 }
 .skyblue li a.color2:hover{
-	background:#589D3E;
+	background:#bababa;
 	color: #ffffff;
 }
 .skyblue li a.color3:hover{
@@ -138,5 +138,3 @@ skyblue .mepanel img:hover,.skyblue form.contact input[type="text"]:focus,.skybl
 	background:#00677C;
 	color: #ffffff;
 }
-	
-

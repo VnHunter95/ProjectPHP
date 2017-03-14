@@ -24,6 +24,7 @@
     </script>
     <script src="shared/js/simpleCart.min.js"></script>
     <script src="/shared/js/login.js"></script>
+    <script src="/shared/js/searchProduct.js"></script>
 </head>
 
 <body class="parallax">
@@ -39,17 +40,19 @@
               <ul class="nav navbar-nav">
 
               </ul>
-              <form class="navbar-form navbar-left">
+              <form class="navbar-form navbar-left" action="layout/user/danh-sach-san-pham.php" method="GET">
                   <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search">
+                      <input type="text" class="form-control" placeholder="Search" name="searchInput">
                       <div class="input-group-btn">
-                          <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                          <button class="btn btn-default"  type="submit"><i class="glyphicon glyphicon-search"></i></button>
                       </div>
                   </div>
                   <div class="form-group">
-                      <select class="form-control">
-                          <option value="AL">A</option>
-                          <option value="WY">B</option>
+                      <select class="form-control" name="searchType">
+                          <option value="1">Tên</option>
+                          <option value="3">Nhà Sản Xuất</option>
+                          <option value="5">Mô tả</option>
+                          <option value="0">Tất cả</<option>
                       </select>
                   </div>
               </form>
@@ -146,58 +149,6 @@
 
       <!--header-->
       <div class="container">
-          <div class="head-top">
-              <div class=" h_menu4">
-                  <ul class="memenu skyblue">
-                      <li><a class="color1" href="#">Men</a>
-                          <div class="mepanel">
-                              <div class="row">
-                                  <div class="col1">
-                                      <div class="h_nav">
-                                          <ul>
-                                              <li><a href="products.html">Accessories</a></li>
-                                              <li><a href="products.html">Bags</a></li>
-                                              <li><a href="products.html">Caps & Hats</a></li>
-                                              <li><a href="products.html">a</a></li>
-                                              <li><a href="products.html">Jc</a></li>
-                                              <li><a href="products.html">Jeans</a></li>
-                                              <li><a href="products.html">Jewellery</a></li>
-                                              <li><a href="products.html">b</a></li>
-                                              <li><a href="products.html">Leather Jackets</a></li>
-                                              <li><a href="products.html">d</a></li>
-                                              <li><a href="products.html">Loungewear</a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </li>
-                      <li class="grid"><a class="color2" href="#">	Women</a>
-                          <div class="mepanel">
-                              <div class="row">
-                                  <div class="col1">
-                                      <div class="h_nav">
-                                          <ul>
-                                              <li><a href="products.html">Accessories</a></li>
-                                              <li><a href="products.html">Bags</a></li>
-                                              <li><a href="products.html">Caps & Hats</a></li>
-                                              <li><a href="products.html">Hoodies & Sweatshirts</a></li>
-                                              <li><a href="products.html">Jackets & Coats</a></li>
-                                              <li><a href="products.html">Jeans</a></li>
-                                              <li><a href="products.html">Jewellery</a></li>
-                                              <li><a href="products.html">Jumpers & Cardigans</a></li>
-                                              <li><a href="products.html">Leather Jackets</a></li>
-                                              <li><a href="products.html">Long Sleeve T-Shirts</a></li>
-                                              <li><a href="products.html">Loungewear</a></li>
-                                          </ul>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-              <div class="clearfix"> </div>
-          </div>
+          <?php include('index/displayHeaderTop.php');?>
       </div>
   </div>

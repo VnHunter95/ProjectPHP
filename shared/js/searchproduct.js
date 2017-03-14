@@ -131,7 +131,7 @@ function displayResultProductPager(xmlDocumentElement)
     innerHTML += '\n<li class="disabled"><a aria-labesl="Previous"><span aria-hidden="true">«</span></a></li>';
   }else
   {
-    innerHTML += '\n<li><a onClick="searchProduct('+searchType+',\''+input+'\','+(currentPage - 1) +','+produtPerPage+')" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
+    innerHTML += '\n<li><a style='cursor: pointer;' onClick="searchProduct('+searchType+',\''+input+'\','+(currentPage - 1) +','+produtPerPage+')" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
   }
   for(var i = 1 ; i <= pageCount; i++)
   {
@@ -139,7 +139,7 @@ function displayResultProductPager(xmlDocumentElement)
     {
       var text = 'class="active"';
     }
-    innerHTML+= '\n<li><a '+text+' onClick = "searchProduct('+searchType+',\''+input+'\','+ i +','+produtPerPage+')">'+ i +'<span class="sr-only"></span></a></li>';
+    innerHTML+= '\n<li><a '+text+' style="cursor: pointer;" onClick = "searchProduct('+searchType+',\''+input+'\','+ i +','+produtPerPage+')">'+ i +'<span class="sr-only"></span></a></li>';
   }
   if(currentPage==pageCount)
   {

@@ -22,7 +22,7 @@
     public static function get_one_product_image($productId)
     {
       $db = new Db();
-      $sql = "SELECT image_filename FROM image i , product_image pi WHERE i.image_id = pi.image_id AND pi.product_id= '".$productId."'";
+      $sql = "SELECT image_filename FROM image i , product_image pi WHERE i.image_id = pi.image_id AND pi.product_id= '".$productId."' ORDER BY pi.image_id";
       $res = $db->select_to_array($sql);
       reset($res);
       return $res[0]['image_filename'];

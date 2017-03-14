@@ -51,12 +51,12 @@ function handleServerResponse()
       var code = xmlDocumentElement.textContent;
       switch (code) {
         case '1':
-          alert('GG U HAXED DIS WEBUSAITO !');
+          alert('Đăng nhập thành công');
           $('#loginModal').modal('hide');
           location.reload();
           break;
         case '2':
-          alert('Login FAILED BITCH');
+          alert('Sai mật khẩu');
           break;
         case '0':
           alert('Loging out !');
