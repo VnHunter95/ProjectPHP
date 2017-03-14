@@ -5,6 +5,11 @@
     {
       $page = $_GET['page'];
     }
+    if(isset($_GET['searchType'])&&isset($_GET['searchInput'])){
+      $searchType = $_GET['searchType'];
+      $searchInput = $_GET['searchInput'];
+      echo '<script type="text/javascript">searchProduct('.$searchType.',"'.$searchInput.'",1,9)</script>';
+    }
     if(isset($_GET["groupid"]))
     {
       $groupid=$_GET["groupid"];
@@ -21,7 +26,13 @@
       $pageCount = Product::getProductByTagPageCount($tagid,9);
     }
     else {
+      if(!isset($_GET['searchType']))
+      {
       $products=Product::list_popular_product(18);
+    }else {
+      $products = null;
+    }
+
     }
     //Code inflate product layout
     if(isset($products))
@@ -33,7 +44,7 @@
         echo ($loop == 1) ? "\n<div class='bottom-product'>": "";
         echo "\n<div class='col-md-4 bottom-cd simpleCart_shelfItem'>"
               ."\n<div class='product-at'>"
-                ."\n<a href='single.html'><img class='img-responsive' src='/shared/image/".$image."' alt='Product Image' style='withd:300px; height:300px;  margin: 0 auto;>' >"
+                ."\n<a href='/layout/user/chi-tiet-san-pham.php?productid=".$item['product_id']."'><img class='img-responsive' src='/shared/image/".$image."' alt='Product Image' style='withd:300px; height:300px;  margin: 0 auto;>' >"
                   ."\n<div class='pro-grid'>"
                       ."\n<span class='buy-in'>Mua Ngay</span>"
                   ."\n</div>"

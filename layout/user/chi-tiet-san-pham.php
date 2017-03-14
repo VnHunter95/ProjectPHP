@@ -1,14 +1,13 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/class/ProductGroup.Class.php");
-			require_once($_SERVER['DOCUMENT_ROOT']."/class/Supplier.Class.php");
-			require_once($_SERVER['DOCUMENT_ROOT']."/class/Product.Class.php");
-			require_once($_SERVER['DOCUMENT_ROOT']."/class/ProductImage.Class.php");
-			require_once($_SERVER['DOCUMENT_ROOT']."/class/Tag.Class.php");
-			require_once($_SERVER['DOCUMENT_ROOT']."/class/Helper.php");
-?>
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html>
 <head>
-<title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Products :: w3layouts</title>
+<title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Signle :: w3layouts</title>
 <link href="/shared/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/shared/js/jquery.min.js"></script>
@@ -28,35 +27,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="/shared/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="/shared/js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
+
+
+<script src="/shared/js/main.js"></script>
 <script src="/shared/js/simpleCart.min.js"> </script>
-<script src="/shared/js/searchproduct.js"></script>
 </head>
 <body>
+<!--demo-->
+<?php
+include("/method/getProductDetail.php");
+
+if(!isset($_GET["productid"])){
+	header('Location: not_found.php');
+	exit;
+}
+else
+{
+	$prod;
+	unset($prod);
+	$id = $_GET["productid"];
+	$prod = getProductDetail($id);
+}
+?>
 <!--header-->
 <div class="header">
 	<div class="header-top">
 		<div class="container">
 			<div class="search">
-					<form onsubmit="return preSearchProduct();">
-						<input type="text" id="search-input" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+					<form>
+						<input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 						<input type="submit" value="Go">
 					</form>
 			</div>
 			<div class="header-left">
 					<ul>
 						<li ><a class="lock"  href="login.html"  >Login</a></li>
-						<li><a class="lock" href="games.html"  >Checkout</a></li>
+						<li><a class="lock" href="register.html"  >Register</a></li>
 						<li>
-</li>
+						</li>
 
 					</ul>
 					<div class="cart box_1">
 						<a href="checkout.html">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-							<img src="images/cart.png" alt=""/></h3>
+							<img src="/doc/design/layoutimage/cart.png" alt=""/></h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+				<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 
 					</div>
 					<div class="clearfix"> </div>
@@ -67,10 +84,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="head-top">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""></a>
+					<a href="index.html"><img src="/doc/design/layoutimage/logo.png" alt=""></a>
 				</div>
 		  <div class=" h_menu4">
-				<ul class="memenu skyblue">
+					<ul class="memenu skyblue">
 					  <li class="active grid"><a class="color8" href="index.html">Home</a></li>
 				      <li><a class="color1" href="#">Shop</a>
 				      	<div class="mepanel">
@@ -198,46 +215,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!--content-->
 <!---->
-<div class="product">
-	<div class="container">
-		<div class="col-md-3 product-price">
-		<!--Display Category - Product Group-->
-		<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayCategoryLeftSide.php");?>
-		<!--initiate accordion-->
-		<script type="text/javascript">
-			$(function() {
-			    var menu_ul = $('.menu > li > ul'),
-			           menu_a  = $('.menu > li > a');
-			    menu_ul.hide();
-			    menu_a.click(function(e) {
-			        e.preventDefault();
-			        if(!$(this).hasClass('active')) {
-			            menu_a.removeClass('active');
-			            menu_ul.filter(':visible').slideUp('normal');
-			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-			        } else {
-			            $(this).removeClass('active');
-			            $(this).next().stop(true,true).slideUp('normal');
-			        }
-			    });
+		<div class="product">
+			<div class="container">
+				<div class="col-md-3 product-price">
+						<?php include("chi-tiet-san-pham/displayCategoryLeftside.php"); ?>
+						<!--initiate accordion-->
+							<script type="text/javascript">
+								$(function() {
+								    var menu_ul = $('.menu > li > ul'),
+								           menu_a  = $('.menu > li > a');
+								    menu_ul.hide();
+								    menu_a.click(function(e) {
+								        e.preventDefault();
+								        if(!$(this).hasClass('active')) {
+								            menu_a.removeClass('active');
+								            menu_ul.filter(':visible').slideUp('normal');
+								            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+								        } else {
+								            $(this).removeClass('active');
+								            $(this).next().stop(true,true).slideUp('normal');
+								        }
+								    });
 
-			});
-		</script>
-<!-- TAG -->
-		<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayTagLeftSide.php");?>
+								});
+							</script>
+						<!---->
+							<?php include("chi-tiet-san-pham/displayTagLeftSide.php"); ?>
+						<!---->
+				</div>
+				<?php include("chi-tiet-san-pham/displayProductDetail.php");?>
+				<div class="clearfix"> </div>
 		</div>
-		<div class="col-md-9 product1">
-			<div id = "product-list">
-				<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayProductList.php");?>
-			</div>
 		</div>
-		<div class="clearfix"> </div>
-		<div id = "product-pager">
-			<?php include($_SERVER['DOCUMENT_ROOT']."/layout/user/danh-sach-san-pham/displayProductPager.php"); ?>
-		</div>
-	</div>
-</div>
-
 <!--//content-->
 <div class="footer">
 				<div class="container">
@@ -265,6 +274,7 @@ Contrary to popular belief</p>
 						<li><a href="#"><i class="twitter"> </i></a></li>
 						<li><a href="#"><i class="rss"> </i></a></li>
 						<li><a href="#"><i class="gmail"> </i></a></li>
+
 					</ul>
 				</div>
 				<div class="col-md-4 amet-sed">
@@ -283,6 +293,6 @@ and promo</p>
 		<p >© 2015 New store All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 		</div>
 		</div>
-		<!--test Area-->
+<script src="chi-tiet-san-pham/js/goToProductList.js"></script>
 </body>
 </html>

@@ -32,7 +32,7 @@
               {
                 $class="class='active'";
               }
-              echo "<li><a ".$class." href='".$pageRedirect."'>".$i."<span class='sr-only'></span></a></li>";
+              echo "<li><a ".$class." href='".$pageRedirect."' style='cursor: pointer;'>".$i."<span class='sr-only'></span></a></li>";
             }
             if($currentPage==$pageCount)
             {
