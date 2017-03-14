@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Products :: w3layouts</title>
+
     <link href="shared/css/bootstrap.min.css" rel="stylesheet" media="all"/>
     <link href="shared/css/select2.min.css" rel="stylesheet" media="all"/>
     <link href="shared/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -21,7 +21,7 @@
     <script>
         $(document).ready(function () { $(".memenu").memenu(); });
     </script>
-    <script src="shared/js/simpleCart.min.js"></script>
+    <script src="/shared/js/simpleCart.min.js"></script>
     <script src="/shared/js/login.js"></script>
     <script src="/shared/js/searchProduct.js"></script>
 </head>
@@ -56,7 +56,7 @@
                   </div>
               </form>
               <ul class="nav navbar-nav navbar-right">
-                  <?php include('index/displayLoginButton.php');?>
+                  <?php include($_SERVER['DOCUMENT_ROOT'].'/index/displayLoginButton.php');?>
                   <li>
                       <a href="#" data-toggle="modal" data-target="#cartModal"><span class="glyphicon glyphicon-shopping-cart"></span> 2 Sản Phẩm - 360.000 VNĐ</a>
                       <div id="cartModal" class="modal fade" role="dialog">
@@ -148,6 +148,6 @@
 
       <!--header-->
       <div class="container">
-          <?php include('index/displayHeaderTop.php');?>
+          <?php include($_SERVER['DOCUMENT_ROOT'].'/index/displayHeaderTop.php');?>
       </div>
   </div>

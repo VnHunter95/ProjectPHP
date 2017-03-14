@@ -27,8 +27,8 @@ function createXmlHttpRequestObject(){
 function preSearchProduct()
 {
   //code to get search type - for demo purpose - searchtype set to 0 which is search all if not fuond search by Tag
-  var searchType = 0;
-  var input = document.getElementById("search-input").value;
+  var searchType =  document.getElementById("searchType").value;
+  var input = document.getElementById("searchInput").value;
   //default product per page is 9,
   //but can change if website add change product per page function to let user edit the product per page
   //set product per page for 9 for now for demo purpose
@@ -131,7 +131,7 @@ function displayResultProductPager(xmlDocumentElement)
     innerHTML += '\n<li class="disabled"><a aria-labesl="Previous"><span aria-hidden="true">«</span></a></li>';
   }else
   {
-    innerHTML += '\n<li><a style='cursor: pointer;' onClick="searchProduct('+searchType+',\''+input+'\','+(currentPage - 1) +','+produtPerPage+')" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
+    innerHTML += '\n<li><a style="cursor: pointer;" onClick="searchProduct('+searchType+',\''+input+'\','+(currentPage - 1) +','+produtPerPage+')" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
   }
   for(var i = 1 ; i <= pageCount; i++)
   {
