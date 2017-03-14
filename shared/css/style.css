@@ -1803,15 +1803,15 @@ ul.qty li p{
 .b-animate span {
   padding-top: 4em;
 }
-.b-from-left {
+/*.b-from-left {
   min-height: 288px;
-}
+}*/
 .top-in span {
   padding: 5em 0 0;
 }
-.b-from-top {
+/*.b-from-top {
   min-height: 350px;
-}
+}*/
 .top-in1 span {
   padding: 2.3em 0 0;
 }
@@ -1858,7 +1858,7 @@ h6.best2 {
 }
 @media(max-width:768px){
 .h_menu4 {
-  width: 50%;
+  width: 100%;
 }
 .banner-text {
   width: 90%;
