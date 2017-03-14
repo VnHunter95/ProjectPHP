@@ -12,7 +12,7 @@
     <link href='shared/css/font.css' rel='stylesheet' type='text/css'>
     <link href="shared/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
     <script src="shared/js/jquery.min.js"></script>
-	<script type="application/x-javascript">
+	  <script type="application/x-javascript">
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
     <script src="shared/js/memenu.js" type="text/javascript"></script>
@@ -24,6 +24,12 @@
     <script src="/shared/js/simpleCart.min.js"></script>
     <script src="/shared/js/login.js"></script>
     <script src="/shared/js/searchProduct.js"></script>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 </head>
 
 <body class="parallax">
@@ -51,7 +57,7 @@
                           <option value="1">Tên</option>
                           <option value="3">Nhà Sản Xuất</option>
                           <option value="5">Mô tả</option>
-                          <option value="0">Tất cả</<option>
+                          <option value="0">Tất cả</option>
                       </select>
                   </div>
               </form>
