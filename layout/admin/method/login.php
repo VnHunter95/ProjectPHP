@@ -9,8 +9,7 @@
       echo '<script> alert("Login OK !"); </script>';
       $_SESSION['staff'] = $id[0]['staff_id'];
     }else {
-      header('Location: '.$_SERVER['DOCUMENT_ROOT'].'/layout/error.php ');
-      exit;
+      echo '<script> alert("CAN\'T LOGIN !!!! !"); </script>';
     }
   }
 ?>
