@@ -239,5 +239,11 @@
         return $res;
       }
     }
-
+    public static function getProductByIdforCart($productId)
+    {
+      $db = new DB();
+      $sql = "SELECT product_id, product_name,price FROM product WHERE $productId=? LIMIT 1";
+      $res=$db->select_to_array($sql);
+      return $res;
+    }
 ?>

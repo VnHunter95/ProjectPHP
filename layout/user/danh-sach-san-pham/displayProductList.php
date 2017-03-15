@@ -46,7 +46,7 @@
               ."\n<div class='product-at'>"
                 ."\n<a href='/layout/user/chi-tiet-san-pham.php?productid=".$item['product_id']."'><img class='img-responsive' src='/shared/image/".$image."' alt='Product Image' style='withd:300px; height:300px;  margin: 0 auto;>' >"
                   ."\n<div class='pro-grid'>"
-                      ."\n<span class='buy-in'>Mua Ngay</span>"
+                      ."\n<button type='submit'>Mua Ngay</button>"
                   ."\n</div>"
                 ."\n</a>"
               ."\n</div>"
