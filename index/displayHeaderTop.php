@@ -43,7 +43,6 @@
                         </div>
                     </div>
                 </li>
-                <li><a class="color1" href="/layout/user/ban-do.php">Bản Đồ</a></li>
             </ul>
         </div>
         <div class="clearfix"> </div>
