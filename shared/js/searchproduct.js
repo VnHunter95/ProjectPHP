@@ -44,7 +44,7 @@ function searchProduct(searchType, input,page,produtPerPage)
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://localhost:5454/layout/user/danh-sach-san-pham/gererateResultProductXML.php?searchType="+searchType+"&input="+input+"&page="+page+"&produtPerPage="+produtPerPage;
+    var url = "http://"+root+":5454/layout/user/danh-sach-san-pham/gererateResultProductXML.php?searchType="+searchType+"&input="+input+"&page="+page+"&produtPerPage="+produtPerPage;
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponse;
     xmlHttp.send(null);
@@ -93,7 +93,7 @@ function displayResultProduct(xmlDocumentElement)
       }
       innerHTML+= "\n<div class='col-md-4 bottom-cd simpleCart_shelfItem'>"
                       +"\n<div class='product-at'>"
-                        +"\n<a href='single.html'><img class='img-responsive' src='/shared/image/"+image+"' alt='Product Image' style='withd:300px; height:300px;  margin: 0 auto;>' >"
+                        +"\n<a href='/layout/user/chi-tiet-san-pham.php?productid="+id+"'><img class='img-responsive' src='/shared/image/"+image+"' alt='Product Image' style='withd:300px; height:300px;  margin: 0 auto;>' >"
                           +"\n<div class='pro-grid'>"
                                 +"\n<span class='buy-in'>Mua Ngay</span>"
                           +"\n</div>"
@@ -151,4 +151,43 @@ function displayResultProductPager(xmlDocumentElement)
   }
   innerHTML += '</ul>\n</nav>';
   document.getElementById("product-pager").innerHTML = innerHTML;
+}
+/////Place order via AJAX
+function doOrder(date)
+{
+
+    if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
+    {
+      var root = document.location.hostname;
+      var url = "http://"+root+":5454/layout/user/thanh-toan/placeOrder.php?deliveryDate="+date;
+      xmlHttp.open("GET",url, true);
+      xmlHttp.onreadystatechange = handleServerResponseDoOrer;
+      xmlHttp.send(null);
+    }else{
+      setTimeout("doOrder()",1000);
+    }
+}
+
+function handleServerResponseDoOrer()
+{
+  if(xmlHttp.readyState==4)
+  {
+    if(xmlHttp.status==200)
+    {
+      xmlResponse = xmlHttp.responseXML;
+      xmlDocumentElement = xmlResponse.documentElement;
+      var code = xmlDocumentElement.getElementsByTagName('code')[0].textContent;
+      if(code == '1')
+      {
+        $('#placeOrderModal').modal('hide');
+        $('#doneOrder').modal('show');
+      }else {
+        alert('Đặt Hàng Thất Bại ! Lỗi: '+xmlDocumentElement.getElementsByTagName('code').textContent);
+      }
+
+    }
+    else {
+      alert("Something went worng ...");
+    }
+  }
 }

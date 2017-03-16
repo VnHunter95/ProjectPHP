@@ -1,7 +1,7 @@
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/header.php');?>
 <?php
-include("/method/getProductDetail.php");
+include("method/getProductDetail.php");
 
 if(!isset($_GET["productid"])){
 	header('Location: not_found.php');
