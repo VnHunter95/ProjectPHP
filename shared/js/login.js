@@ -31,16 +31,16 @@ function login()
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://localhost:5454/index/doLogin.php?username="+user+"&password="+password;
+    var url = "http://"+root+":5454/index/doLogin.php?username="+user+"&password="+password;
     xmlHttp.open("GET",url, true);
-    xmlHttp.onreadystatechange = handleServerResponse;
+    xmlHttp.onreadystatechange = handleServerResponseDoLogin;
     xmlHttp.send(null);
   }else{
-    setTimeout("searchProduct()",1000);
+    setTimeout("login()",1000);
   }
 }
 
-function handleServerResponse()
+function handleServerResponseDoLogin()
 {
   if(xmlHttp.readyState==4)
   {
@@ -78,11 +78,11 @@ function logout()
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://localhost:5454/index/doLogout.php";
+    var url = "http://"+root+":5454/index/doLogout.php";
     xmlHttp.open("GET",url, true);
-    xmlHttp.onreadystatechange = handleServerResponse;
+    xmlHttp.onreadystatechange = handleServerResponseDoLogin;
     xmlHttp.send(null);
   }else{
-    setTimeout("searchProduct()",1000);
+    setTimeout("logout()",1000);
   }
 }
