@@ -26,10 +26,10 @@
     <!-- Tên tài khoản -->
     <div class="form-group row">
       <div class = "lbltitle">
-        <label>Tên đăng nhập</label>
+        <label>Tên đăng nhập</label><p>(không chứa ký tự đặc biệt)</p>
       </div>
       <div class="lblinput">
-        <input type="text" name="txtusername" id="txtusername" minlength="6" maxlength="18" required  value="<?php echo isset($_POST["txtusername"]) ? $_POST["txtusername"] : "" ; ?>" />
+        <input type="text" name="txtusername" id="txtusername" pattern="[A-Za-z0-9]+" minlength="6" maxlength="18" required  value="<?php echo isset($_POST["txtusername"]) ? $_POST["txtusername"] : "" ; ?>" />
       </div>
     </div>
     <!-- Mật khẩu -->
@@ -65,7 +65,7 @@
         <label>Địa chỉ liên lạc</label>
       </div>
       <div class="lblinput">
-        <input type="textarea" name="txtcusadd" maxlength="150" required value="<?php echo isset($_POST["txtcusadd"]) ? $_POST["txtcusadd"] : "" ; ?>" />
+        <textarea rows="4" cols="50" name="txtcusadd" maxlength="150" required value="<?php echo isset($_POST["txtcusadd"]) ? $_POST["txtcusadd"] : "" ; ?>" /></textarea>
       </div>
     </div>
     <!-- Email  -->
