@@ -58,6 +58,9 @@ function handleServerResponseDoLogin()
         case '2':
           alert('Sai mật khẩu');
           break;
+        case '3':
+          alert('Tài khoản đã bị Ban');
+          break;
         case '0':
           alert('Loging out !');
           location.reload();

@@ -1,4 +1,5 @@
 <?php
+	require_once($_SERVER['DOCUMENT_ROOT'].'/class/Customer.Class.php');
 	include($_SERVER['DOCUMENT_ROOT'].'/header.php');
   include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getCartItems.php');
 	$cartItems = getCartItems();

@@ -33,7 +33,7 @@
       '".mysqli_real_escape_string($db->connect(),$this->password)."',
       '".mysqli_real_escape_string($db->connect(),$this->customerId)."')";
       $result = $db->query_execute($sql);
-
+    }
 
     public static function getCusomerByUser($username)
     {
