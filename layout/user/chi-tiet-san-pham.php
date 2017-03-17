@@ -45,7 +45,12 @@ else
 							<?php include("chi-tiet-san-pham/displayTagLeftSide.php"); ?>
 						<!---->
 				</div>
-				<?php include("chi-tiet-san-pham/displayProductDetail.php");?>
+				<?php if($prod != false)
+				{
+					include("chi-tiet-san-pham/displayProductDetail.php");
+				}else {
+						echo '<h2>Không Tìm Thấy Sản Phẩm<h2>';
+				}?>
 				<div class="clearfix"> </div>
 		</div>
 		</div>
