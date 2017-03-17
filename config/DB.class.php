@@ -38,6 +38,16 @@ class Db
     }
     return $rows;
   }
+  public function query_execute_return_id($queryString)
+  {
+    $connection = $this->connect();
+    $result=$connection->query($queryString);
+    if($result == false)
+    {
+      return false;
+    }
+    return $connection->insert_id;
+  }
 
 }
 ?>
