@@ -23,6 +23,7 @@
   {
     $userinfo = new User(null,$user_name, $user_pass, $result1);
     $result2 = $userinfo->saveuser();
+    //HELLO THIS IS ANOTHER PERSON LINE !
     if(!$result2)
     {
       echo "<h1>Tên đăng nhập đã được sử dụng.</h1>";
