@@ -17,14 +17,14 @@
 
   // Test
   $cusinfo->customer_id= $result1;
-  if(!$result1){
+  if($result1 == false){
     echo "<h1>Đã có lỗi xảy ra với thông tin khách hàng.</h1>";
   }else
   {
     $userinfo = new User(null,$user_name, $user_pass, $result1);
     $result2 = $userinfo->saveuser();
     //HELLO THIS IS ANOTHER PERSON LINE !
-    if(!$result2)
+    if($result2 == false)
     {
       echo "<h1>Tên đăng nhập đã được sử dụng.</h1>";
       $result1= $cusinfo->delcus();
