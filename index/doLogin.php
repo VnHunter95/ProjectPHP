@@ -6,13 +6,8 @@
   {
     $username = $_GET['username'];
     $pass = $_GET['password'];
-    $isError = login($username,$pass);
-    if($isError != false) // Đúng
-    {
-      $responseCode = 1;
-    }else {
-      $responseCode = 2;
-    }
+    $code = login($username,$pass);
+    $responseCode = $code;
   } else
   {
     $responseCode = 0;
