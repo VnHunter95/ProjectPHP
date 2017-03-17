@@ -2,7 +2,6 @@
   require_once($_SERVER['DOCUMENT_ROOT'].'/class/StoreInfo.Class.php');
   $storeInfo = StoreInfo::getStoreInfo();
 ?>
-    </div>
     <div class="footer">
         <div class="container">
             <div class="footer-top-at">
