@@ -5,8 +5,7 @@
     $prod = Product::getProductById($id);
     if($prod == false)
     {
-      echo '<script>alert("Khong co sp ! ")</script>';
-      exit;
+      return false;
     }else{
       return $prod;
     }

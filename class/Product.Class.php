@@ -26,7 +26,7 @@
       //Get Product list
       public static function list_product(){
         $db= new Db();
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT p.* FROM product p,supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1'";
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -34,7 +34,7 @@
       public static function list_product_by_group($groupId,$page,$productPerPage){
         $db=new DB();
         $startIndex = ($productPerPage*($page-1));
-        $sql = "SELECT * FROM product WHERE product_group_id = '".$groupId."' ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
+        $sql = "SELECT p.* FROM product p,supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.product_group_id = '".$groupId."' ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -43,7 +43,7 @@
       {
         $db= new Db();
         $startIndex = ($productPerPage*($page-1));
-        $sql = "SELECT * FROM product WHERE supplier_id = '".$supplierId."' ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
+        $sql = "SELECT p.* FROM product p, supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.supplier_id = '".$supplierId."' ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -52,8 +52,8 @@
       {
         $db= new Db();
         $startIndex = ($productPerPage*($page-1));
-        $sql = "SELECT p.* FROM product p , tag t , product_tag pt "
-              ." WHERE p.product_id = pt.product_id AND t.tag_id = pt.tag_id AND t.tag_id = ".$tagId
+        $sql = "SELECT p.* FROM product p , tag t , product_tag pt , supplier s"
+              ." WHERE p.product_id = pt.product_id AND s.supplier_id = p.supplier_id AND s.is_active = '1' AND t.tag_id = pt.tag_id AND t.tag_id = ".$tagId
               ." ORDER BY product_name LIMIT ".$startIndex.",".$productPerPage."";
         $res=$db->select_to_array($sql);
         return $res;
@@ -62,7 +62,7 @@
       public static function list_new_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product ORDER BY update_date DESC ";
+        $sql = "SELECT p.* FROM product p, supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' ORDER BY update_date DESC ";
         if($quantity!=0)
         {
           $sql = $sql." LIMIT ".$quantity."";
@@ -74,7 +74,7 @@
       public static function list_popular_product($quantity)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product ORDER BY number_sold DESC";
+        $sql = "SELECT p.* FROM product p,supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' ORDER BY number_sold DESC";
         if($quantity!=0)
         {
           $sql =$sql." LIMIT ".$quantity."";
@@ -89,7 +89,7 @@
         $db= new Db();
         $sql = "SELECT DISTINCT p.product_name ,p.product_id ,p.supplier_id ,p.product_group_id ,p.description ,p.price ,p.number_remain ,p.number_sold ,p.update_date"
               ." FROM product p, product_group pg, supplier s"
-              ." WHERE p.product_group_id = pg.product_group_id AND p.supplier_id = s.supplier_id"
+              ." WHERE p.product_group_id = pg.product_group_id AND p.supplier_id = s.supplier_id AND s.is_active = '1' "
               ." AND p.product_name like '%".$input."%'"
               ." OR p.description like '%".$input."%'"
               ." OR pg.product_group_name like '%".$input."%'"
@@ -107,8 +107,8 @@
       {
         $db= new Db();
         $sql =  " SELECT p.* "
-                ." FROM product_tag pt,product p , tag t"
-                ." WHERE pt.product_id = p.product_id AND t.tag_id = pt.tag_id"
+                ." FROM product_tag pt,product p , tag t , supplier s"
+                ." WHERE pt.product_id = p.product_id AND t.tag_id = pt.tag_id AND s.supplier_id = p.supplier_id AND s.is_active = '1' "
                 ." AND t.tag_name like '%".$input."%'";
         $res=$db->select_to_array($sql);
         return $res;
@@ -118,8 +118,8 @@
       {
         $db= new Db();
         $sql =  "SELECT p.*"
-                ." FROM product p , product_group pg"
-                ." WHERE p.product_group_id = pg.product_group_id"
+                ." FROM product p , product_group pg , supplier s"
+                ." WHERE p.product_group_id = pg.product_group_id  AND s.supplier_id = p.supplier_id AND s.is_active = '1' "
                 ." AND pg.product_group_name like '%".$input."%'";
         $res=$db->select_to_array($sql);
         return $res;
@@ -130,7 +130,7 @@
         $db= new Db();
         $sql =  "SELECT p.*"
                 ." FROM product p , supplier s"
-                ." WHERE p.supplier_id = s.supplier_id"
+                ." WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' "
                 ." AND s.supplier_name like '%".$input."%'";
         $res=$db->select_to_array($sql);
         return $res;
@@ -139,9 +139,9 @@
       public static function searchByName($input)
       {
         $db= new Db();
-        $sql =   " SELECT * "
-                ." FROM product"
-                ." WHERE product_name like '%".$input."%'";
+        $sql =   " SELECT p.* "
+                ." FROM product p, supplier s"
+                ." WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND product_name like '%".$input."%'";
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -149,9 +149,9 @@
       public static function searchByDescription($input)
       {
         $db= new Db();
-        $sql =  "SELECT *"
-                ." FROM product"
-                ." WHERE description like '%".$input."%'";
+        $sql =  "SELECT p.*"
+                ." FROM product p , supplier s"
+                ." WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.description like '%".$input."%'";
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -160,7 +160,7 @@
       public static function listProductWithLimit($limit)
       {
         $db= new Db();
-        $sql = "SELECT * FROM product LIMIT ".$limit;
+        $sql = "SELECT p.* FROM product p, supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' LIMIT ".$limit;
         $res=$db->select_to_array($sql);
         return $res;
       }
@@ -171,7 +171,7 @@
       public static function getProductByGroupPageCount($groupId,$productPerPage)
       {
         $db = new DB();
-        $res = $db->query_execute("SELECT COUNT(*) as rowCount FROM product WHERE product_group_id = '".$groupId."'");
+        $res = $db->query_execute("SELECT COUNT(*) as rowCount FROM product p, supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.product_group_id = '".$groupId."'");
         $rowCount = $res->fetch_row();
         $pageCount =  ($rowCount[0] / $productPerPage) + 1;
         $pageCount  = intval($pageCount);
@@ -184,7 +184,7 @@
       public static function getProductBySupplierPageCount($supplierId,$productPerPage)
       {
         $db = new DB();
-        $res = $db->query_execute("SELECT COUNT(*) as rowCount FROM product WHERE supplier_id = '".$supplierId."'");
+        $res = $db->query_execute("SELECT COUNT(*) as rowCount FROM product p, supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.supplier_id = '".$supplierId."'");
         $rowCount = $res->fetch_row();
         $pageCount =  ( $rowCount[0] / $productPerPage ) + 1;
         $pageCount = intval($pageCount);
@@ -197,8 +197,8 @@
       public static function getProductByTagPageCount($tagId,$productPerPage)
       {
         $db = new DB();
-        $sql = "SELECT COUNT(*) FROM product p , tag t , product_tag pt "
-              ." WHERE p.product_id = pt.product_id AND t.tag_id = pt.tag_id AND t.tag_id = ".$tagId;
+        $sql = "SELECT COUNT(*) FROM product p , tag t , product_tag pt , supplier s"
+              ." WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.product_id = pt.product_id AND t.tag_id = pt.tag_id AND t.tag_id = ".$tagId;
         $res = $db->query_execute($sql);
         $rowCount = $res->fetch_row();
         $pageCount =  ( $rowCount[0] / $productPerPage ) + 1;
@@ -208,8 +208,8 @@
       public static function getProductById($id)
       {
         $db = new DB();
-        $sql = "SELECT * FROM product p"
-              ." WHERE p.product_id =".$id;
+        $sql = "SELECT p.* FROM product p, supplier s"
+              ." WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.product_id =".$id;
         $res = $db->select_to_array($sql);
         if($res != false)
         {
@@ -233,8 +233,8 @@
           $values = $values."'".$item['tag_id']."'";
         }
         $values = " IN (".$values.")";
-        $sql = "SELECT DISTINCT p.* FROM product p,product_tag pt"
-              ." WHERE p.product_id = pt.product_id and p.product_id != ".$productId." and pt.tag_id ".$values." ORDER BY p.number_sold DESC LIMIT 3 ";
+        $sql = "SELECT DISTINCT p.* FROM product p,product_tag pt , supplier s"
+              ." WHERE p.supplier_id = s.supplier_id AND s.is_active = '1' AND p.product_id = pt.product_id and p.product_id != ".$productId." and pt.tag_id ".$values." ORDER BY p.number_sold DESC LIMIT 3 ";
         $res = $db->select_to_array($sql);
         return $res;
       }
