@@ -120,7 +120,7 @@
 		</div>
 		<div class="clearfix"> </div>
 		<div id = "product-pager">
-			<?php include("/danh-sach-san-pham/displayProductPager.php"); ?>
+			<?php include("danh-sach-san-pham/displayProductPager.php"); ?>
 		</div>
 	</div>
 </div>
