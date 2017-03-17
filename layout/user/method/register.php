@@ -23,10 +23,12 @@
   {
     $userinfo = new User(null,$user_name, $user_pass, $result1);
     $result2 = $userinfo->saveuser();
-    if(!$result2){
-    echo "<h1>Đã có lỗi xảy ra với thông tin tài khoản.</h1>";
-    $result1= $cusinfo->delcus();
-    }else {
+    if(!$result2)
+    {
+      echo "<h1>Tên đăng nhập đã được sử dụng.</h1>";
+      $result1= $cusinfo->delcus();
+    }
+    else {
       echo "Đăng ký thành công!";
     }
   }

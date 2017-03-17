@@ -29,7 +29,7 @@
         <label>Tên đăng nhập</label>
       </div>
       <div class="lblinput">
-        <input type="text" name="txtusername" id="txtusername" maxlength="18" required  value="<?php echo isset($_POST["txtusername"]) ? $_POST["txtusername"] : "" ; ?>" />
+        <input type="text" name="txtusername" id="txtusername" minlength="6" maxlength="18" required  value="<?php echo isset($_POST["txtusername"]) ? $_POST["txtusername"] : "" ; ?>" />
       </div>
     </div>
     <!-- Mật khẩu -->
@@ -38,7 +38,7 @@
         <label>Mật khẩu</label>
       </div>
       <div class="lblinput">
-        <input type="password" name="txtpassword" maxlength="18" required value="<?php echo isset($_POST["txtpassword"]) ? $_POST["txtpassword"] : "" ; ?>"></textarea>
+        <input type="password" name="txtpassword" minlength="6" maxlength="18" required value="<?php echo isset($_POST["txtpassword"]) ? $_POST["txtpassword"] : "" ; ?>"></textarea>
       </div>
     </div>
     <!-- Tên khách hàng -->
@@ -47,7 +47,7 @@
         <label>Tên khách hàng</label>
       </div>
       <div class="lblinput">
-        <input type="text" name="txtcusname" maxlength="50" required value="<?php echo isset($_POST["txtcusname"]) ? $_POST["txtcusname"] : "" ; ?>" />
+        <input type="text" name="txtcusname"  maxlength="50" required value="<?php echo isset($_POST["txtcusname"]) ? $_POST["txtcusname"] : "" ; ?>" />
       </div>
     </div>
     <!-- Số điện thoại -->
@@ -56,7 +56,7 @@
         <label>Số điện thoại</label>
       </div>
       <div class="lblinput">
-        <input type="number" name="txtcusphone"  required value="<?php echo isset($_POST["txtcusphone"]) ? $_POST["txtcusphone"] : "" ; ?>" />
+        <input type="tel" name="txtcusphone" pattern="^0\d{9,10}" required value="<?php echo isset($_POST["txtcusphone"]) ? $_POST["txtcusphone"] : "" ; ?>" />
       </div>
     </div>
     <!-- Địa chỉ -->
@@ -65,7 +65,7 @@
         <label>Địa chỉ liên lạc</label>
       </div>
       <div class="lblinput">
-        <input type="text" name="txtcusadd" maxlength="150" required value="<?php echo isset($_POST["txtcusadd"]) ? $_POST["txtcusadd"] : "" ; ?>" />
+        <input type="textarea" name="txtcusadd" maxlength="150" required value="<?php echo isset($_POST["txtcusadd"]) ? $_POST["txtcusadd"] : "" ; ?>" />
       </div>
     </div>
     <!-- Email  -->
@@ -74,7 +74,7 @@
         <label>Email</label>
       </div>
       <div class="lblinput">
-        <input type="email" name="txtcusemail" maxlength="50" required value="<?php echo isset($_POST["txtcusemail"]) ? $_POST["txtcusemail"] : "" ; ?>" />
+        <input type="email" name="txtcusemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="50" required value="<?php echo isset($_POST["txtcusemail"]) ? $_POST["txtcusemail"] : "" ; ?>" />
       </div>
     </div>
     <div>
