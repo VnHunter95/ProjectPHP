@@ -6,6 +6,7 @@
 <script src="/shared/js/easypiechart.js"></script>
 <script src="/shared/js/easypiechart-data.js"></script>
 <script src="/shared/js/bootstrap-datepicker.js"></script>
+<script src="/shared/js/bootstrap-table.js"></script>
 <script>
   $('#calendar').datepicker({
   });

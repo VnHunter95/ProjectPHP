@@ -16,5 +16,13 @@
           $res=$db->select_to_array($sql);
           return $res;
         }
+
+        public function save()
+        {
+          $db = new Db();
+          $sql = "INSERT INTO Banner VALUES('".$this->fileName."')";
+          $res=$db->query_execute($sql);
+          return $res;
+        }
     }
 ?>

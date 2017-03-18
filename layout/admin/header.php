@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard - Website Bán Hàng</title>
 	<link href="/shared/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/shared/css/bootstrap-table.css" rel="stylesheet">
 	<link href="/shared/css/datepicker3.css" rel="stylesheet">
 	<link href="/shared/css/adminstyles.css" rel="stylesheet">
 
