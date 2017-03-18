@@ -51,16 +51,37 @@
   <div class="row">
   			<ol class="breadcrumb">
   				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-  				<li class="active">Icons</li>
+  				<li class="active">Banner</li>
   			</ol>
   </div><!--/.row-->
 
   <div class="row">
   			<div class="col-lg-12">
-  				<h1 class="page-header">Tables</h1>
+  				<h1 class="page-header">Banner</h1>
   			</div>
   </div><!--/.row-->
 
+  <div class="row">
+  			<div class="col-lg-12">
+  				<div class="panel panel-default">
+  					<div class="panel-heading">Upload Banner</div>
+            
+  					<div class="panel-body">
+          <form action="quan-ly-banner.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="imageUpload">Chọn File Hình: </label>
+              <input class="form-control" type="file" id="imageUpload" name="fileToUpload" accept="image/*" id="fileToUpload" required/>
+            </div>
+            <input type="submit" class="btn btn-info" name="uploadSubmit" value="Tải Lên" accept="image/*">
+            <?php
+              echo isset($Error) ? $Error : "";
+            ?>
+          </form>
+          </br></br>
+        </div>
+      </div>
+    </div>
+  </div>  
   <div class="row">
   			<div class="col-lg-12">
   				<div class="panel panel-default">
@@ -95,20 +116,7 @@
   				</div>
   			</div>
   		</div><!--/.row-->
-      <div class="row">
-        <div class="col-lg-12 col-lg-offset-1">
-          <h3 class="page-header">Upload Banner</h3>
-          <form action="quan-ly-banner.php" method="post" style="margin-bottom: 20px" enctype="multipart/form-data">
-            <label>Chọn File Hình: </label><input type="file" name="fileToUpload"  id="fileToUpload" required/>
-            </br>
-            <input type="submit" name="uploadSubmit" value="Tải Lên" accept=".jpg,.png,.jpeg">
-            <?php
-              echo isset($Error) ? $Error : "";
-            ?>
-          </form>
-          </br></br>
-        </div>
-      </div>
+
 
 </div>
     <style>
@@ -116,4 +124,5 @@
       vertical-align: middle;
     }
     </style>
-<?php include('footer.php');
+</body>
+</html>

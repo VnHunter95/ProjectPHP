@@ -5,12 +5,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard - Website Bán Hàng</title>
 	<link href="/shared/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/shared/css/bootstrap-table.css" rel="stylesheet">
 	<link href="/shared/css/datepicker3.css" rel="stylesheet">
+	<link href="/shared/css/bootstrap-table.min.css" rel="stylesheet">
+	<link href="/shared/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<link href="/shared/css/adminstyles.css" rel="stylesheet">
+	<link href="/shared/css/select2.min.css" rel="stylesheet">
 
 	<!--Icons-->
 	<script src="/shared/js/lumino.glyphs.js"></script>
+	<script src="/shared/js/jquery-1.11.1.min.js"></script>
+	<script src="/shared/js/bootstrap.min.js"></script>
+	<script src="/shared/js/bootstrap-datepicker.js"></script>
+	<script src="/shared/js/bootstrap-table.min.js"></script>
+	<script src="/shared/js/bootstrap-toggle.min.js"></script>
+	<script src="/shared/js/bootstrap-table-export.js"></script>
+	<script src="/shared/js/tableExport.js"></script>
+
+	<!--select2-->
+	<script src="/shared/js/select2.min.js"></script>
 
 	<!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
@@ -38,21 +50,13 @@
 						<ul class="dropdown-menu" role="menu">
 							<li>
 								<a href="#">
-									<svg class="glyph stroked male-user">
-										<use xlink:href="#stroked-male-user"></use>
-									</svg> Profile</a>
+									<span class="glyphicon glyphicon-user"></span> Profile
+								</a>
 							</li>
 							<li>
 								<a href="#">
-									<svg class="glyph stroked gear">
-										<use xlink:href="#stroked-gear"></use>
-									</svg> Settings</a>
-							</li>
-							<li>
-								<a href="#">
-									<svg class="glyph stroked cancel">
-										<use xlink:href="#stroked-cancel"></use>
-									</svg> Logout</a>
+									<span class="glyphicon glyphicon-off"></span> Logout
+								</a>
 							</li>
 						</ul>
 					</li>
@@ -62,4 +66,5 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-  <?php include('displaySideBar.php'); ?>
+  <?php include('displaySideBar.php');
+?>
