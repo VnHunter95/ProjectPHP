@@ -44,7 +44,8 @@ function searchProduct(searchType, input,page,produtPerPage)
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://"+root+":5454/layout/user/danh-sach-san-pham/gererateResultProductXML.php?searchType="+searchType+"&input="+input+"&page="+page+"&produtPerPage="+produtPerPage;
+    var port = location.port;
+    var url = "http://"+root+":"+port+"/layout/user/danh-sach-san-pham/gererateResultProductXML.php?searchType="+searchType+"&input="+input+"&page="+page+"&produtPerPage="+produtPerPage;
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponse;
     xmlHttp.send(null);
@@ -159,7 +160,7 @@ function doOrder(date)
     if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
     {
       var root = document.location.hostname;
-      var url = "http://"+root+":5454/layout/user/thanh-toan/placeOrder.php?deliveryDate="+date;
+      var url = "http://"+root+":"+port+"/layout/user/thanh-toan/placeOrder.php?deliveryDate="+date;
       xmlHttp.open("GET",url, true);
       xmlHttp.onreadystatechange = handleServerResponseDoOrer;
       xmlHttp.send(null);
