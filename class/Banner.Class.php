@@ -24,5 +24,13 @@
           $res=$db->query_execute($sql);
           return $res;
         }
+
+        public function del()
+        {
+          $db = new Db();
+          $sql = "DELETE FROM Banner WHERE banner_image_filename = '".$this->fileName."'";
+          $res=$db->query_execute_return_affected_rows($sql);
+          return $res;
+        }
     }
 ?>
