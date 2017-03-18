@@ -52,9 +52,15 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <form action="/layout/user/thanh-toan.php"><button type="submit" class="btn btn-info">Thanh Toán</button></form>
+                    <button type="submit" class="btn btn-info" onclick="goToThanhToan();">Thanh Toán</button>
                     <button type="button" class="btn btn-default" style="float:left;" onclick="clearCart()">Xóa giỏ hàng</button>
                     <button type="button" class="btn btn-info" data-dismiss="modal" >Close</button>
+                    <script>
+                      function goToThanhToan()
+                      {
+                        location.href = 'http://'+location.hostname+':'+location.port+'/layout/user/thanh-toan.php';
+                      }
+                    </script>
                 </div>
             </div>
         </div>

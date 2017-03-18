@@ -28,7 +28,8 @@ function addToCart(id){
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://"+root+":5454/index/cart.php?add="+id;
+    var port = location.port;
+    var url = "http://"+root+":"+port+"/index/cart.php?add="+id;
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponseCart;
     xmlHttp.send(null);
@@ -41,7 +42,8 @@ function removeFromCart(id)
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://"+root+":5454/index/cart.php?remove="+id;
+    var port = location.port;
+    var url = "http://"+root+":"+port+"/index/cart.php?remove="+id;
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponseCart;
     xmlHttp.send(null);
@@ -59,7 +61,8 @@ function clearCart()
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://"+root+":5454/index/cart.php?clear";
+    var port = location.port;
+    var url = "http://"+root+":"+port+"/index/cart.php?clear";
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponseCart;
     xmlHttp.send(null);
@@ -73,7 +76,8 @@ function clearCart()
     if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
     {
       var root = document.location.hostname;
-      var url = "http://"+root+":5454/index/cart.php?update="+id+"&q="+quantity;
+      var port = location.port;
+      var url = "http://"+root+":"+port+"/index/cart.php?update="+id+"&q="+quantity;
       xmlHttp.open("GET",url, true);
       xmlHttp.onreadystatechange = handleServerResponseCart;
       xmlHttp.send(null);
