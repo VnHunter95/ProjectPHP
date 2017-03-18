@@ -3,7 +3,7 @@
   $total = 0 ;
   $itemCount = 0;
   $cartInfo = ' (0) Sản Phẩm ';
-  if(isset($_SESION['cart']))
+  if(isset($_SESSION['cart']))
   {
     if(count($_SESSION['cart']) > 0){
       foreach($_SESSION['cart'] as $item)
