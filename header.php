@@ -26,6 +26,7 @@
     <script src="/shared/js/searchProduct.js"></script>
     <script src="/shared/js/toancustomscript.js"></script>
     <script src="/shared/js/custom.js"></script>
+    <script src="/shared/js/cart.js"></script>
     <style>
        #map {
         height: 400px;
