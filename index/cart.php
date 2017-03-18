@@ -11,13 +11,41 @@ if(isset($_GET['add']))
   include('cart/processRemoveItem.php');// 1-> OK 3-> No Product In Session 4->No Carts
 }elseif(isset($_GET['update']) && isset($_GET['q'])){
   include('cart/processUpdateItem.php');// 1-> OK 3-> No Product In Session 4->No Carts
-}else {
+}elseif(isset($_GET['clear']))
+{
+  unset($_SESSION['cart']);
+  $responseCode = 69;
+}
+else {
   $responseCode = 0;
 }
 
 header('Content-Type: text/xml');
 echo '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>';
 echo '<response>';
-echo  $responseCode;
+if($responseCode == 1)
+{
+  $itemCount = 0;
+  $total = 0;
+  echo '<cart>';
+  foreach($_SESSION['cart'] as $item)
+  {
+    $subtotal =  intval($item['quantity'])*intval($item['price']);
+    echo '<item>';
+    echo '<id>'.$item['id'].'</id>';
+    echo '<name>'.$item['product_name'].'</name>';
+    echo '<price>'.number_format($item['price']).'</price>';
+    echo '<quantity>'.$item['quantity'].'</quantity>';
+    echo '<image>'.$item['image'].'</image>';
+    echo '<stotal>'.number_format($subtotal).'</stotal>';
+    echo '</item>';
+    $itemCount += intval($item['quantity']);
+    $total += $subtotal;
+  }
+  echo '</cart>';
+  echo '<total>'.number_format($total).'</total>';
+  echo '<itemcount>'.number_format($itemCount).'</itemcount>';
+}
+echo '<code>'.$responseCode.'</code>';
 echo '</response>';
 ?>

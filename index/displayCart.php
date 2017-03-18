@@ -2,18 +2,20 @@
 <?php
   $total = 0 ;
   $itemCount = 0;
-  if(isset($_SESION['cart']) || count($_SESSION['cart']) > 0)
+  $cartInfo = ' (0) Sản Phẩm ';
+  if(isset($_SESION['cart']))
   {
-    foreach($_SESSION['cart'] as $item)
-    {
-      $total += intval($item['price'])*intval($item['quantity']);
-      $itemCount += intval($item['quantity']);
+    if(count($_SESSION['cart']) > 0){
+      foreach($_SESSION['cart'] as $item)
+      {
+        $total += intval($item['price'])*intval($item['quantity']);
+        $itemCount += intval($item['quantity']);
+      }
+      $cartInfo = $itemCount.' Sản Phẩm - '.number_format($total).' VNĐ </a>';
     }
-    echo '<a href="#" data-toggle="modal" data-target="#cartModal" id="cartTotal"><span class="glyphicon glyphicon-shopping-cart"></span> '.$itemCount.' Sản Phẩm - '.number_format($total).' VNĐ </a>';
-  }else {
-    echo '<a href="#" data-toggle="modal" data-target="#cartModal" id="cartTotal"><span class="glyphicon glyphicon-shopping-cart"></span> Empty Cart</a>';
   }
 ?>
+<a href="#" data-toggle="modal" data-target="#cartModal" id="cartTotal"><span class="glyphicon glyphicon-shopping-cart"></span><?php echo $cartInfo?></a>
     <div id="cartModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
             <!-- Modal content-->
@@ -33,26 +35,26 @@
                                 <th style="width:10%"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="itemTable">
                             <?php include('displayCartItems.php'); ?>
                         </tbody>
                         <tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong><?php echo 'Total: '.number_format($total).' VNĐ'; ?></strong></td>
+                                <td class="text-center" id="cartTotal2"><strong><?php echo 'Total: '.number_format($total).' VNĐ'; ?></strong></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td colspan="2" class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><?php echo 'Total: '.number_format($total).' VNĐ'; ?></td>
+                                <td class="hidden-xs text-center" id="cartTotal1"><?php echo 'Total: '.number_format($total).' VNĐ'; ?></td>
                                 <td></td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info" onclick="location.href = 'http://'+window.location.host+'/layout/user/thanh-toan.php'" >Thanh Toán</button>
-                    <button type="button" class="btn btn-default" style="float:left;">Xóa giỏ hàng</button>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <form action="/layout/user/thanh-toan.php"><button type="submit" class="btn btn-info">Thanh Toán</button></form>
+                    <button type="button" class="btn btn-default" style="float:left;" onclick="clearCart()">Xóa giỏ hàng</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal" >Close</button>
                 </div>
             </div>
         </div>

@@ -65,7 +65,7 @@ function handleServerResponse()
       {
         displayResultProduct(xmlDocumentElement);
         displayResultProductPager(xmlDocumentElement);
-      }
+      }else
       {
         alert(xmlDocumentElement.getElementsByTagName("Error")[0].textContent);
       }
