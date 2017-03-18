@@ -54,7 +54,7 @@
           </span>
        </li>
      </ul>
-     <a href="#" class="add-cart item_add">Thêm Giỏ Hàng</a>
+     <a onclick="addToCart(<?php echo $prod[0]['product_id']; ?>)" class="add-cart item_add" style="cursor: pointer;">Thêm Giỏ Hàng</a>
     </div>
   </div>
   <div class="clearfix"></div>

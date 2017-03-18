@@ -1,5 +1,19 @@
 <li>
-    <a href="#" data-toggle="modal" data-target="#cartModal"><span class="glyphicon glyphicon-shopping-cart"></span> 2 Sản Phẩm - 360.000 VNĐ</a>
+<?php
+  $total = 0 ;
+  $itemCount = 0;
+  if(isset($_SESION['cart']) || count($_SESSION['cart']) > 0)
+  {
+    foreach($_SESSION['cart'] as $item)
+    {
+      $total += intval($item['price'])*intval($item['quantity']);
+      $itemCount += intval($item['quantity']);
+    }
+    echo '<a href="#" data-toggle="modal" data-target="#cartModal" id="cartTotal"><span class="glyphicon glyphicon-shopping-cart"></span> '.$itemCount.' Sản Phẩm - '.number_format($total).' VNĐ </a>';
+  }else {
+    echo '<a href="#" data-toggle="modal" data-target="#cartModal" id="cartTotal"><span class="glyphicon glyphicon-shopping-cart"></span> Empty Cart</a>';
+  }
+?>
     <div id="cartModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
             <!-- Modal content-->
@@ -20,55 +34,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!--Product 1-->
-                            <tr>
-                                <td data-th="Product">
-                                    <div class="row">
-                                        <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"
-                                            /></div>
-                                        <div class="col-sm-6">
-                                            <h4 style="max-width: 320px;word-wrap: break-word;">Product 1</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-th="Price">180.000 VNĐ</td>
-                                <td data-th="Quantity">
-                                    <input type="number" class="form-control text-center" value="1">
-                                </td>
-                                <td data-th="Subtotal" class="text-center">180.000 VNĐ</td>
-                                <td data-th="" class="actions">
-                                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
-                            <!--Product 2-->
-                            <tr>
-                                <td data-th="Product">
-                                    <div class="row">
-                                        <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"
-                                            /></div>
-                                        <div class="col-sm-6">
-                                            <h4 style="max-width: 320px;word-wrap: break-word;">Product 2</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-th="Price">180.000 VNĐ</td>
-                                <td data-th="Quantity">
-                                    <input type="number" class="form-control text-center" value="1">
-                                </td>
-                                <td data-th="Subtotal" class="text-center">180.000 VNĐ</td>
-                                <td data-th="" class="actions">
-                                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
+                            <?php include('displayCartItems.php'); ?>
                         </tbody>
                         <tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong>Total: 360.000 VNĐ</strong></td>
+                                <td class="text-center"><strong><?php echo 'Total: '.number_format($total).' VNĐ'; ?></strong></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td colspan="2" class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Total: 360.000 VNĐ</strong></td>
+                                <td class="hidden-xs text-center"><?php echo 'Total: '.number_format($total).' VNĐ'; ?></td>
                                 <td></td>
                             </tr>
                         </tfoot>

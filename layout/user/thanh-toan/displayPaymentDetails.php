@@ -2,7 +2,7 @@
 <div class="price-details">
   <h3>Chi Tiết Thanh Toán</h3>
   <span>Tổng Tiền: </span>
-  <span class="total1"><?php echo number_format($totalInfo['total_price']); ?> Vnđ</span>
+  <span class="total1"><?php echo number_format($totalPrice); ?> Vnđ</span>
   <span>Giảm Giá</span>
   <span class="total1">---</span>
   <span>Phí Vận Chuyển</span>
@@ -11,7 +11,7 @@
 </div>
 <ul class="total_price">
   <li class="last_price"> <h4>Tổng Tiền: </h4></li>
-  <li class="last_price"><span><?php echo number_format($totalInfo['total_price']); ?></span></li>
+  <li class="last_price"><span><?php echo number_format($totalPrice); ?></span></li>
   <div class="clearfix"> </div>
 </ul>
 <div class="clearfix"></div>
