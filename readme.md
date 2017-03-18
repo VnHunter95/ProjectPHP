@@ -102,14 +102,12 @@ Xem mẫu ba dạng table trong file /doc/design/admin/tables.html
 ##Documentation Class DB
 
 function query_execute_return_affected_rows($sql)
-@pagrams $sql - Câu lệnh truy vấy
-@return Affected Rows
+
 ``Thực thi câu lệnh sql trả về số dòng ảnh hưởng. Khuyên dùng khi Delete,Update``
 
 function query_execute_return_id($sql)
-@pagrams $sql - Câu lệnh truy vấy
-@return false || Mã Id tự tăng
-``Thực thi câu lệnh sql trả về id tự tăng. Khuyên dùng khi Insert các bảng cha đế lấy id insert tiếp các bản con``
+
+``Thực thi câu lệnh sql trả về id tự tăng, false nếu có lỗi. Khuyên dùng khi Insert các bảng cha đế lấy id insert tiếp các bản con``
 
 ##  
 Đang phát triển thêm…
