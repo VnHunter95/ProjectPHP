@@ -22,7 +22,6 @@ if(isset($_POST['btnSubmit']))
     {
       $today = date("Y-m-d H:i:s");
       $orderDetail = array();
-      array_pop($cartItems);
       foreach($cartItems as $item)
       {
         $orderDetail[] = array('quantity' => $item['quantity'], 'product_id' => $item['id']);
@@ -56,7 +55,6 @@ if(isset($_POST['btnSubmit']))
       $deliveryDate = $_GET['deliveryDate'];
       $today = date("Y-m-d H:i:s");
       $orderDetail = array();
-      array_pop($cartItems);
       foreach($cartItems as $item)
       {
         $orderDetail[] = array('quantity' => $item['quantity'], 'product_id' => $item['id']);

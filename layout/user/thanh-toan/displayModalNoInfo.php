@@ -8,11 +8,11 @@
        <h4 class="modal-title">Vui lòng nhập thông tin</h4>
      </div>
      <div class="modal-body">
-         <label>Họ Tên</label></br><input type="text" name="cusName" required=""/></br>
-         <label>Điện Thoại</label></br><input name="cusPhone" type="tel" pattern="^0\d{9,10}" required ></br>
-         <label>Email</label></br><input type="email" name="cusEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></br>
-         <label>Địa Chỉ</label></br><textarea type="text" name="cusAdress" required/></textarea></br>
-         <label>Ngày Giao Hàng</label></br><input name="deliveryDate" type="date" placeholder="Ngày/Tháng/Năm" />
+         <label for="cusName">Họ Tên</label></br><input type="text" id="cusName" name="cusName" required/></br>
+         <label for="cusPhone">Điện Thoại</label></br><input id="cusPhone" name="cusPhone" type="tel" pattern="^0\d{9,10}" required ></br>
+         <label for="cusEmail">Email</label></br><input id="cusEmail" type="email" name="cusEmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></br>
+         <label for="cusAdress">Địa Chỉ</label></br><textarea  id="cusAdress" type="text" name="cusAdress" required/></textarea></br>
+         <label for="deliveryDate">Ngày Giao Hàng</label></br><input id="deliveryDate" name="deliveryDate" type="date" placeholder="Ngày/Tháng/Năm" required/>
          <!-- cdn for modernizr, if you haven't included it already -->
           <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
           <!-- polyfiller file to detect and load polyfills -->
