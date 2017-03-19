@@ -11,11 +11,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="tenDN">Tên đăng nhập</label>
-                        <input type="text" class="form-control" name="tenDN" id="usernameLogin">
+                        <input type="text" class="form-control" name="tenDN" id="usernameLogin" required maxlength="18">
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
-                        <input type="text" class="form-control" name="password" id="passwordLogin">
+                        <input type="password" class="form-control" name="password" id="passwordLogin" required maxlength="18">
                     </div>
                 </div>
                 <div class="modal-footer">
