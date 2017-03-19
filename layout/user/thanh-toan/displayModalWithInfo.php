@@ -28,12 +28,14 @@
             webshims.polyfill('forms forms-ext');
           </script>
           <hr>
-          <h4>Ngày giao hàng </h4><input id="deliveryDate" type="date" placeholder="Ngày/Tháng/Năm" />
+          <h4>Ngày giao hàng</h4>
+          <br>
+          <input class="form-control" style="width:50%" id="deliveryDate" type="date" placeholder="Ngày/Tháng/Năm" />
        </div>
      </div>
      <div class="modal-footer">
        <button type="button" class="btn btn-success" onClick="order()">Đặt Hàng</button>
-       <button type="button" class="btn btn-default" data-dismiss="modal">Tắt</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
      </div>
    </div>
 </div>

@@ -31,7 +31,8 @@ function login()
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://"+root+":5454/index/doLogin.php?username="+user+"&password="+password;
+    var port = location.port;
+    var url = "http://"+root+":"+port+"/index/doLogin.php?username="+user+"&password="+password;
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponseDoLogin;
     xmlHttp.send(null);
@@ -81,7 +82,8 @@ function logout()
   if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
   {
     var root = document.location.hostname;
-    var url = "http://"+root+":5454/index/doLogout.php";
+    var port = location.port;
+    var url = "http://"+root+":"+port+"/index/doLogout.php";
     xmlHttp.open("GET",url, true);
     xmlHttp.onreadystatechange = handleServerResponseDoLogin;
     xmlHttp.send(null);
