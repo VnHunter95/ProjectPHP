@@ -158,10 +158,10 @@
       function actionFormatter(value, row, index)
       {
       return['<form action="quan-ly-tag.php" method="POST">'
-            +'<button class="btn btn-danger" name="subDelete" type="submit" value="'+value+'" id="btnDelete'+value+'" onclick="return confirmDelete(\''+row.tag_name+'\')">Xóa</button>'
-            +'<button class="btn btn-primary" type="button" value="'+value+'" id="btnEdit'+value+'" onclick="showButton(\'1\',\''+value+'\',\''+row.tag_name+'\')">Sửa</button>'
-            +'<button class="btn btn-primary" name="subEdit" type="button" value="'+value+'" id="btnSave'+value+'" style="display: none;" onclick="edit('+value+')">Lưu</button>'
-            +'<button class="btn btn-secondary" type="button" value="'+value+'" id="btnCancle'+value+'" style="display: none;" onclick="showButton(\'0\',\''+value+'\',\''+row.tag_name+'\')">Hủy</button>'
+            +'<button style="margin-left: 5px; margin-right: 5px;" class="btn btn-danger" name="subDelete" type="submit" value="'+value+'" id="btnDelete'+value+'" onclick="return confirmDelete(\''+row.tag_name+'\')">Xóa</button>'
+            +'<button style="margin-left: 5px; margin-right: 5px;" class="btn btn-primary" type="button" value="'+value+'" id="btnEdit'+value+'" onclick="showButton(\'1\',\''+value+'\',\''+row.tag_name+'\')">Sửa</button>'
+            +'<button style="margin-left: 5px; margin-right: 5px; display: none;" class="btn btn-primary" name="subEdit" type="button" value="'+value+'" id="btnSave'+value+'" onclick="edit('+value+')">Lưu</button>'
+            +'<button style="margin-left: 5px; margin-right: 5px; display: none;" class="btn btn-secondary" type="button" value="'+value+'" id="btnCancle'+value+'" onclick="showButton(\'0\',\''+value+'\',\''+row.tag_name+'\')">Hủy</button>'
         +'</form>'].join('');
       }
 
@@ -209,12 +209,12 @@
 				{
 					$('#btnEdit'+tagid).click({bool: '1', id: tagid, name: name}, showButton2);
 					$('#btnCancle'+tagid).click({bool: '0', id: tagid, name: name}, showButton2);
-					$('#btnCancle'+tagid).click({name: name}, return confirmDelete2);
+					$('#btnDelete'+tagid).prop("onclick", null);
+					$('#btnDelete'+tagid).click({name: name}, confirmDelete2);
 					showButton('0',tagid,name);
 				}
 				function confirmDelete2(event)
 				{
- 						alert('yolo');
 						return confirm('Xác nhận xóa Tag '+event.data.name);
 				}
 				function showButton2(event)
