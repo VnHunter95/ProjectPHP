@@ -13,9 +13,8 @@
                     <p>Email: <?php echo $storeInfo[0]['store_email'];?></p>
                     <p>Facebook: <?php echo $storeInfo[0]['store_facebook'];?></p>
                 </div>
-                <div class="col-md-4 amet-sed ">
-                        <div class="container">
-                        <div class="col-md-8">
+                <div class="col-md-8 amet-sed">
+                        <div>
                             <button class="btn btn-info" onclick="getUserLoc()"><span class="glyphicon glyphicon-road"></span>Tìm Đường</button>
                             <div id="map"></div>
                             <script>
@@ -96,7 +95,6 @@
                             </script>
                         </div>
                         <div class="col-md-2"></div>
-                    </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>

@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard - Website Bán Hàng</title>
-
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/datepicker3.css" rel="stylesheet">
-	<link href="assets/css/bootstrap-table.min.css" rel="stylesheet">
-	<link href="assets/css/bootstrap-toggle.min.css" rel="stylesheet">
-	<link href="assets/css/adminstyles.css" rel="stylesheet">
-	<link href="assets/css/select2.min.css" rel="stylesheet">
+	<link href="/shared/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/shared/css/datepicker3.css" rel="stylesheet">
+	<link href="/shared/css/bootstrap-table.min.css" rel="stylesheet">
+	<link href="/shared/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<link href="/shared/css/adminstyles.css" rel="stylesheet">
+	<link href="/shared/css/select2.min.css" rel="stylesheet">
 
 	<!--Icons-->
-	<script src="assets/js/lumino.glyphs.js"></script>
-	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/bootstrap-datepicker.js"></script>
-	<script src="assets/js/bootstrap-table.min.js"></script>
-	<script src="assets/js/bootstrap-toggle.min.js"></script>
-	<script src="assets/js/bootstrap-table-export.js"></script>
-	<script src="assets/js/tableExport.js"></script>
+	<script src="/shared/js/lumino.glyphs.js"></script>
+	<script src="/shared/js/jquery-1.11.1.min.js"></script>
+	<script src="/shared/js/bootstrap.min.js"></script>
+	<script src="/shared/js/bootstrap-datepicker.js"></script>
+	<script src="/shared/js/bootstrap-table.min.js"></script>
+	<script src="/shared/js/bootstrap-toggle.min.js"></script>
+	<script src="/shared/js/bootstrap-table-export.js"></script>
+	<script src="/shared/js/tableExport.js"></script>
 
 	<!--select2-->
-	<script src="assets/js/select2.min.js"></script>
+	<script src="/shared/js/select2.min.js"></script>
+
 	<!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>

@@ -42,7 +42,7 @@
           <div class="container-fluid">
               <div class="navbar-header">
                   <div class="logo">
-                      <!--<a href="index.html"><img src="image/logo.png" alt=""></a>-->
+                      <a href="#"><img src="../../shared/image/logo.png" alt="image/logo.png"></a>
                   </div>
               </div>
               <ul class="nav navbar-nav">

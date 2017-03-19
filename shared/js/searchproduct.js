@@ -160,7 +160,6 @@ function doOrder(date)
     if(xmlHttp.readyState==0 || xmlHttp.readyState==4)
     {
       var root = document.location.hostname;
-      var port = location.port;
       var url = "http://"+root+":"+port+"/layout/user/thanh-toan/placeOrder.php?deliveryDate="+date;
       xmlHttp.open("GET",url, true);
       xmlHttp.onreadystatechange = handleServerResponseDoOrer;
