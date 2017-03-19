@@ -124,7 +124,7 @@
 												</div>
 												<div class="form-group">
 													<label for="activeedit">Active</label>
-													<input type="checkbox" id='activeedit' data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+													<input type="checkbox" id='activeedit' >
 												</div>
 											</div>
 											<div class="modal-footer">
@@ -312,5 +312,5 @@
 		}
 	</script>
   <?php
-    include('header.php');
+    include('footer.php');
   ?>

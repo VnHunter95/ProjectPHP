@@ -6,25 +6,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard - Website Bán Hàng</title>
 
-	<link href="/layout/admin/assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/layout/admin/assets/css/datepicker3.css" rel="stylesheet">
-	<link href="/layout/admin/assets/css/bootstrap-table.min.css" rel="stylesheet">
-	<link href="/layout/admin/assets/css/bootstrap-toggle.min.css" rel="stylesheet">
-	<link href="/layout/admin/assets/css/adminstyles.css" rel="stylesheet">
-	<link href="/layout/admin/assets/css/select2.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/bootstrap-table.min.css" rel="stylesheet">
+	<link href="css/bootstrap-toggle.min.css" rel="stylesheet">
+	<link href="css/adminstyles.css" rel="stylesheet">
+	<link href="css/select2.min.css" rel="stylesheet">
 
 	<!--Icons-->
-	<script src="/layout/admin/assets/js/lumino.glyphs.js"></script>
-	<script src="/layout/admin/assets/js/jquery-1.11.1.min.js"></script>
-	<script src="/layout/admin/assets/js/bootstrap.min.js"></script>
-	<script src="/layout/admin/assets/js/bootstrap-datepicker.js"></script>
-	<script src="/layout/admin/assets/js/bootstrap-table.min.js"></script>
-	<script src="/layout/admin/assets/js/bootstrap-toggle.min.js"></script>
-	<script src="/layout/admin/assets/js/bootstrap-table-export.js"></script>
-	<script src="/layout/admin/assets/js/tableExport.js"></script>
+	<script src="js/lumino.glyphs.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.min.js"></script>
+	<script src="js/bootstrap-toggle.min.js"></script>
+	<script src="js/bootstrap-table-export.js"></script>
+	<script src="js/tableExport.js"></script>
 
 	<!--select2-->
-	<script src="/layout/admin/assets/js/select2.min.js"></script>
+	<script src="js/select2.min.js"></script>
 	<!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>

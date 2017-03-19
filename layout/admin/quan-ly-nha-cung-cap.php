@@ -114,7 +114,7 @@
 												</div>
 												<div class="form-group">
 													<label for="active">Active</label>
-													<input type="checkbox" id='active' name='active'>
+                          <input type="checkbox" id='active' name="active" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
 												</div>
 											</div>
 											<div class="modal-footer">
@@ -162,7 +162,8 @@
 						</div>
 						<div class="form-group">
 							<label for="activeedit">Active</label>
-							<input id='activeedit' name="activeedit" type="checkbox">
+              <input type="checkbox" id='activeedit' name="activeedit" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -280,9 +281,9 @@
       }
       if(row.is_active == '1')
       {
-        $('#activeedit').prop( "checked", true );
+        $('#activeedit').bootstrap-toggle("on");
       }else{
-        $('#activeedit').prop( "checked", false );
+        $('#activeedit').bootstrap-toggle("off");
       }
       ////////YOLO FROM HERE
 			//Đổ dữ liệu vào modal2 ở đây
@@ -290,5 +291,5 @@
 		}
 	</script>
   <?php
-    include('header.php');
+    include('footer.php');
   ?>
