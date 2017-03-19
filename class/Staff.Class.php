@@ -45,7 +45,7 @@
       public function edit()
       {
         $db= new Db();
-        $sql = "UPDATE staff SET staff_username = '".$this->staffUsername."', staff_password = '".$this->staffPassword."' , staff_name = '".$this->staffName."', staff_role='".$this->staffRole."' ,is_active = '.$this->isActive.' WHERE staff_id = '$this->staffId'";
+        $sql = "UPDATE staff SET staff_username = '".$this->staffUsername."', staff_password = '".$this->staffPassword."' , staff_name = '".$this->staffName."', staff_role='".$this->staffRole."' , is_active = b'".strval($this->isActive)."' WHERE staff_id = '$this->staffId'";
         $res=$db->query_execute_return_affected_rows($sql);
         return $res;
       }

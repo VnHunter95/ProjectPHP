@@ -125,7 +125,7 @@
 													</select>
 												</div>
 												<div class="form-group">
-													<label for="activeedit">Active</label>
+													<label for="active">Active</label>
             							<input type="checkbox" id="active" name="active" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
 												</div>
 											</div>
@@ -157,7 +157,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Sửa sản phẩm</h4>
+					<h4 class="modal-title">Sửa Thông Tin Nhân Sự</h4>
 				</div>
 				<form action="quan-ly-nhan-su.php" method="POST">
 					<div class="modal-body">
@@ -173,7 +173,7 @@
 							<label for="password">Mật khẩu:</label>
 							<input type="password" class="form-control" id="passwordedit" name="passwordedit">
 						</div>
-						<div class="form-group">
+						<div class="form-group" id="groupdiv">
 							<label for="group">Chức vụ:</label>
 							<select class="form-control" id="groupedit" name="groupedit">
                 <option value = "Staff" >Staff</option>
@@ -184,7 +184,7 @@
 						</div>
 						<div class="form-group">
 							<label for="activeedit">Active</label>
-							<input type="checkbox" id='activeedit' data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+							<input type="checkbox" id='activeedit' name="activeedit" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -303,11 +303,12 @@
       function displayComfirm(event){
           confirm('Xác nhận xóa nhà sản xuất '+event.data.name);
       }
+      $("groupdiv select").val(row.staff_role);
       if(row.is_active == '1')
       {
-        $('#activeedit').prop( "checked", true );
+        $('#activeedit').bootstrapToggle('on')
       }else{
-        $('#activeedit').prop( "checked", false );
+        $('#activeedit').bootstrapToggle('off')
       }
       ////////YOLO FROM HERE
 			//Đổ dữ liệu vào modal2 ở đây
