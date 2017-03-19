@@ -88,7 +88,7 @@ function order()
       {
         error = "Không thể giao trong ngày !";
       }else{
-        error = "Ngày giao không hợp lệ !";
+        error = "Không Hợp Lệ !";
       }
       alert(error);
     break;

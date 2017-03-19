@@ -30,7 +30,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="quan-ly-nha-cung-cap.php">
+				<a href="quan-ly-ncc.html">
 					<svg class="glyph stroked star">
 						<use xlink:href="#stroked-star"></use>
 					</svg> Nhà cung cấp</a>
@@ -48,20 +48,20 @@
 					</svg> Đơn đặt hàng</a>
 			</li>
 			<li>
-				<a href="quan-ly-banner.php">
+				<a href="quan-ly-banner.html">
 					<svg class="glyph stroked star">
 						<use xlink:href="#stroked-star"></use>
 					</svg> Banner</a>
 			</li>
 			<li>
-				<a href="thong-tin-shop.php">
+				<a href="thong-tin-shop.html">
 					<svg class="glyph stroked star">
 						<use xlink:href="#stroked-star"></use>
 					</svg> Thông tin shop</a>
 			</li>
 			<li role="presentation" class="divider"></li>
 			<li>
-				<a href="quan-ly-nhan-su.php">
+				<a href="quan-li-nhan-su.html">
 					<svg class="glyph stroked star">
 						<use xlink:href="#stroked-star"></use>
 					</svg> Quản lý nhân sự</a>

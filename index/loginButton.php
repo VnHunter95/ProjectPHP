@@ -11,17 +11,17 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="tenDN">Tên đăng nhập</label>
-                        <input type="text" class="form-control" name="tenDN" id="usernameLogin" required maxlength="18">
+                        <input type="text" class="form-control" name="tenDN" id="usernameLogin">
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
-                        <input type="password" class="form-control" name="password" id="passwordLogin" required maxlength="18">
+                        <input type="password" class="form-control" name="password" id="passwordLogin">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <label style="float:left">Chưa có tài khoản? <a href="#">Đăng ký</a></label>
-                    <button type="submit" class="btn btn-info" onclick="login()" >Đăng nhập</button>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <label style="float:left">Chưa có tài khoản? <a href="dang-ky.php">Đăng ký</a></label>
+                    <button type="submit" class="btn btn-primary" onclick="login()" >Đăng nhập</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
         </div>

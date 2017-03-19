@@ -1,11 +1,11 @@
 <?php
   require_once($_SERVER['DOCUMENT_ROOT']."/config/DB.class.php");
   class Customer{
-    private $customer_id;
-    private $customer_name;
-    private $customer_phone_number;
-    private $customer_address;
-    private $customer_email;
+    public $customer_id;
+    public $customer_name;
+    public $customer_phone_number;
+    public $customer_address;
+    public $customer_email;
     public function __construct($cus_id, $cus_name,$cus_phone,$cus_add,$cus_email){
       $this->customer_id  = $cus_id;
       $this->customer_name  = $cus_name;

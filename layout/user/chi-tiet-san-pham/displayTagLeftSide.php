@@ -1,7 +1,7 @@
 <?php require_once($_SERVER['DOCUMENT_ROOT'].'/class/Tag.Class.php'); ?>
 <div class="sellers">
           <div class="of-left-in">
-            <h3 class="tag">Tags</h3>
+            <h3>Tags</h3>
           </div>
             <div class="tags">
               <ul>
