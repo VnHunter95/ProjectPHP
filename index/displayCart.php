@@ -52,9 +52,9 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-info" onclick="goToThanhToan();">Thanh Toán</button>
+                    <button type="submit" class="btn btn-primary" onclick="goToThanhToan();">Thanh Toán</button>
                     <button type="button" class="btn btn-default" style="float:left;" onclick="clearCart()">Xóa giỏ hàng</button>
-                    <button type="button" class="btn btn-info" data-dismiss="modal" >Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >Đóng</button>
                     <script>
                       function goToThanhToan()
                       {

@@ -20,8 +20,8 @@
                 </div>
                 <div class="modal-footer">
                     <label style="float:left">Chưa có tài khoản? <a href="#">Đăng ký</a></label>
-                    <button type="submit" class="btn btn-info" onclick="login()" >Đăng nhập</button>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" onclick="login()" >Đăng nhập</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
         </div>
