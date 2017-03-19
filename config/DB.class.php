@@ -27,7 +27,8 @@ class Db
   {
     $connection = $this->connect();
     $result=$connection->query($queryString);
-    return $connection->affected_rows;
+    $effected = $connection->affected_rows;
+    return $effected;
   }
   public function query_execute_return_id($queryString)
   {
