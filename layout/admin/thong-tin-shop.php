@@ -41,11 +41,11 @@
                     <form action"thong-tin-shop.php" method="POST">
                         <div class="form-group">
                             <label for="name">Tên shop:</label>
-                            <input type="text" class="form-control" id="name" name="name" disabled="true" required>
+                            <input type="text" class="form-control" id="name" name="name" disabled="true" maxlength="150" required>
                         </div>
                         <div class="form-group">
                             <label for="phone1">Địa chỉ :</label>
-                            <textarea rows="8" class="form-control" id="address"  name="address" disabled="true" required></textarea>
+                            <textarea rows="8" class="form-control" id="address"  name="address" disabled="true" maxlength="150" required></textarea>
                         </div>
                         <div class="form-group">
                             <label for="phone1">Số điện thoại 1:</label>
@@ -53,11 +53,11 @@
                         </div>
                         <div class="form-group">
                             <label for="phone2">Số điện thoại 2:</label>
-                            <input type="text" class="form-control" id="phone2" name="phone2" disabled="true" pattern="^0\d{9,10}">
+                            <input type="text" class="form-control" id="phone2" name="phone2" disabled="true" maxlength="50" pattern="^0\d{9,10}">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" disabled="true"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                            <input type="email" class="form-control" id="email" name="email" disabled="true" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                         </div>
                         <div class="form-group">
                             <label for="facebook">Facebook:</label>

@@ -102,15 +102,15 @@
 											<div class="modal-body">
 												<div class="form-group">
 													<label for="name">Tên nhà cung cấp:</label>
-													<input type="text" class="form-control" id="name" name="name">
+													<input type="text" class="form-control" id="name" name="name" maxlength="50" required>
 												</div>
 												<div class="form-group">
 													<label for="address">Địa chỉ:</label>
-													<textarea rows="6" id="address" class="form-control" name="address"></textarea>
+													<textarea rows="6" id="address" class="form-control" name="address" maxlength="150" required></textarea>
 												</div>
 												<div class="form-group">
 													<label for="phone">Số điện thoại:</label>
-													<input type="text" class="form-control" id="phone" style="width:40%" name="phone">
+													<input type="text" class="form-control" id="phone" style="width:40%" name="phone" required pattern="^0\d{9,10}">
 												</div>
 												<div class="form-group">
 													<label for="active">Active</label>
@@ -150,15 +150,15 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="nameedit">Tên nhà cung cấp:</label>
-							<input type="text" class="form-control" id="nameedit" name="nameedit">
+							<input type="text" class="form-control" id="nameedit" name="nameedit" required maxlength="50">
 						</div>
 						<div class="form-group">
 							<label for="addressedit">Địa chỉ:</label>
-							<textarea rows="6" id="addressedit" name="addressedit" class="form-control"></textarea>
+							<textarea rows="6" id="addressedit" name="addressedit" class="form-control" required maxlength="150"></textarea>
 						</div>
 						<div class="form-group">
 							<label for="phoneedit">Số điện thoại:</label>
-							<input type="text" class="form-control" id="phoneedit" name="phoneedit" style="width:40%">
+							<input type="text" class="form-control" id="phoneedit" name="phoneedit" style="width:40%" required pattern="^0\d{9,10}">
 						</div>
 						<div class="form-group">
 							<label for="activeedit">Active</label>

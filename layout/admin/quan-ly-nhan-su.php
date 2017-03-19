@@ -105,15 +105,15 @@
 											<div class="modal-body">
 												<div class="form-group">
 													<label for="name">Tên:</label>
-													<input type="text" class="form-control" id="name" name="name">
+													<input type="text" class="form-control" id="name" name="name" required maxlength="50">
 												</div>
 												<div class="form-group">
 													<label for="username">Tên đăng nhập:</label>
-													<input type="text" class="form-control" id="username" name="username">
+													<input type="text" class="form-control" id="username" name="username" required minlength="6" maxlength="18">
 												</div>
 												<div class="form-group">
 													<label for="password">Mật khẩu:</label>
-													<input type="password" class="form-control" id="password" name = "password">
+													<input type="password" class="form-control" id="password" name = "password" required minlength="6" maxlength="18" >
 												</div>
 												<div class="form-group">
 													<label for="group">Chức vụ:</label>
@@ -163,15 +163,15 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="name">Tên:</label>
-							<input type="text" class="form-control" id="nameedit" name="nameedit">
+							<input type="text" class="form-control" id="nameedit" name="nameedit" required maxlength="50">
 						</div>
 						<div class="form-group">
 							<label for="username">Tên đăng nhập:</label>
-							<input type="text" class="form-control" id="usernameedit" name="usernameedit">
+							<input type="text" class="form-control" id="usernameedit" name="usernameedit" minlength="6" maxlength="18" required>
 						</div>
 						<div class="form-group">
 							<label for="password">Mật khẩu:</label>
-							<input type="password" class="form-control" id="passwordedit" name="passwordedit">
+							<input type="password" class="form-control" id="passwordedit" name="passwordedit" minlength="6" maxlength="18" required>
 						</div>
 						<div class="form-group" id="groupdiv">
 							<label for="group">Chức vụ:</label>
