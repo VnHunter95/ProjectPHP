@@ -40,9 +40,9 @@
     $res = $newStaff->save();
     if($res == -1 || $res == 0)
     {
-      echo '<script>alert("Thêm nhà sản xuất thất bại")</script>';
+      echo '<script>alert("Thêm staff thất bại")</script>';
     }else {
-      echo '<script>alert("Thêm nhà sản xuất thành công")</script>';
+      echo '<script>alert("Thêm staff thành công")</script>';
     }
   }
   if(isset($_POST['deleteSubmit']))
@@ -298,10 +298,10 @@
       $('#passwordedit').val(row.staff_password);
       $('#deleteSubmit').prop( "value", row.staff_id);
       $('#editSubmit').prop( "value", row.staff_id );
-      $('#deleteSubmit').click({name: row.staff_name}, displayComfirm);
+      $('#deleteSubmit').click({name: row.staff_username}, displayComfirm);
       // in your function, just grab the event object and go crazy...
       function displayComfirm(event){
-          confirm('Xác nhận xóa nhà sản xuất '+event.data.name);
+          return confirm('Xác nhận xóa staff '+event.data.name);
       }
       $("#groupdiv select").val(row.staff_role);
       if(row.is_active == '1')

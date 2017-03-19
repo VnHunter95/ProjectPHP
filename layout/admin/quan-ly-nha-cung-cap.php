@@ -277,13 +277,13 @@
       $('#deleteSubmit').click({name: row.supplier_name}, displayComfirm);
       // in your function, just grab the event object and go crazy...
       function displayComfirm(event){
-          confirm('Xác nhận xóa nhà sản xuất '+event.data.name);
+          return confirm('Xác nhận xóa nhà sản xuất '+event.data.name);
       }
       if(row.is_active == '1')
       {
-        $('#activeedit').bootstrap-toggle("on");
+        $('#activeedit').bootstrapToggle('on')
       }else{
-        $('#activeedit').bootstrap-toggle("off");
+        $('#activeedit').bootstrapToggle('off')
       }
       ////////YOLO FROM HERE
 			//Đổ dữ liệu vào modal2 ở đây
