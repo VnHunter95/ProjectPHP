@@ -36,6 +36,28 @@
       reset($result);
       return $result[0]['tag_name'];
     }
+
+    public function save()
+    {
+      $db = new DB();
+      $sql = "INSERT INTO tag(tag_id,tag_name) VALUES(null,'".$this->tagName."')";
+      $result = $db->query_execute_return_affected_rows($sql);
+      return $result;
+    }
+    public function delete()
+    {
+      $db = new DB();
+      $sql = "DELETE FROM tag WHERE tag_id = '".$this->tagId."'";
+      $result = $db->query_execute_return_affected_rows($sql);
+      return $result;
+    }
+    public static function editTag($id,$name)
+    {
+      $db = new DB();
+      $sql = "UPDATE tag SET tag_name = '".$name."' WHERE tag_id = '".$id."'";
+      $result = $db->query_execute_return_affected_rows($sql);
+      return $result;
+    }
   }
 
  ?>

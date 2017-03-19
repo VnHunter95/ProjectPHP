@@ -94,23 +94,11 @@
   {
     if( bool == '1')
     {
-      $('#name').prop('disabled',false);
-      $('#address').prop('disabled',false);
-      $('#phone1').prop('disabled',false);
-      $('#phone2').prop('disabled',false);
-      $('#email').prop('disabled',false);
-      $('#facebook').prop('disabled',false);
       $('#btnedit').hide();
       $('#btncancle').show();
       $('#btnsubmit').show();
     }else{
       fillInfo();
-      $('#name').prop('disabled',true);
-      $('#address').prop('disabled',true);
-      $('#phone1').prop('disabled',true);
-      $('#phone2').prop('disabled',true);
-      $('#email').prop('disabled',true);
-      $('#facebook').prop('disabled',true);
       $('#btnedit').show();
       $('#btncancle').hide();
       $('#btnsubmit').hide();
