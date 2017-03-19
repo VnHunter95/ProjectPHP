@@ -303,7 +303,7 @@
       function displayComfirm(event){
           confirm('Xác nhận xóa nhà sản xuất '+event.data.name);
       }
-      $("groupdiv select").val(row.staff_role);
+      $("#groupdiv select").val(row.staff_role);
       if(row.is_active == '1')
       {
         $('#activeedit').bootstrapToggle('on')
