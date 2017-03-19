@@ -1,41 +1,43 @@
 <?php
   include('header.php');
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Supplier.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Staff.Class.php');
   if(isset($_POST['editSubmit']))
   {
     $id       = $_POST['editSubmit'];
     $name     = $_POST['nameedit'];
-    $phone    = $_POST['phoneedit'];
-    $adr      = $_POST['addressedit'];
+    $username = $_POST['usernameedit'];
+    $password = $_POST['passwordedit'];
+    $role     = $_POST['groupedit'];
     if(isset($_POST['activeedit']))
     {
       $active = '1';
     }else {
       $active = '0';
     }
-    $newSupplier = new Supplier($id,$name,$adr,$phone,$active);
-    $res = $newSupplier->edit();
+    $newStaff = new Staff($id,$username,$password,$name,$role,$active);
+    $res = $newStaff->edit();
     if($res == -1)
     {
-      echo '<script>alert("Sửa nhà sản xuất thất bại")</script>';
+      echo '<script>alert("Sửa thông tin staff thất bại")</script>';
     }else {
-      echo '<script>alert("Sửa nhà sản xuất thành công")</script>';
+      echo '<script>alert("Sửa staff thành công")</script>';
     }
   }
   if(isset($_POST['addSubmit']))
   {
     $id       = $_POST['addSubmit'];
     $name     = $_POST['name'];
-    $phone    = $_POST['phone'];
-    $adr      = $_POST['address'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $role     = $_POST['group'];
     if(isset($_POST['active']))
     {
       $active = '1';
     }else {
       $active = '0';
     }
-    $newSupplier = new Supplier(null,$name,$adr,$phone,$active);
-    $res = $newSupplier->save();
+    $newStaff = new Staff(null,$username,$password,$name,$role,$active);
+    $res = $newStaff->save();
     if($res == -1 || $res == 0)
     {
       echo '<script>alert("Thêm nhà sản xuất thất bại")</script>';
@@ -46,8 +48,8 @@
   if(isset($_POST['deleteSubmit']))
   {
     $id = $_POST['deleteSubmit'];
-    $cus = new Supplier($id,'','','','');
-    $res = $cus->delete();
+    $staff = new Staff($id,'','','','','0');
+    $res = $staff->delete();
     if($res == 0 || $res == -1)
     {
         echo '<script>alert("Xóa thất bại !")</script>';
@@ -99,36 +101,36 @@
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
 											<h4 class="modal-title">Thêm nhân sự</h4>
 										</div>
-										<form>
+										<form action="quan-ly-nhan-su.php" method="POST">
 											<div class="modal-body">
 												<div class="form-group">
 													<label for="name">Tên:</label>
-													<input type="text" class="form-control" id="name">
+													<input type="text" class="form-control" id="name" name="name">
 												</div>
 												<div class="form-group">
 													<label for="username">Tên đăng nhập:</label>
-													<input type="text" class="form-control" id="username">
+													<input type="text" class="form-control" id="username" name="username">
 												</div>
 												<div class="form-group">
 													<label for="password">Mật khẩu:</label>
-													<input type="password" class="form-control" id="password">
+													<input type="password" class="form-control" id="password" name = "password">
 												</div>
 												<div class="form-group">
 													<label for="group">Chức vụ:</label>
-													<select class="form-control" id="group">
-														<option value="1">Admin</option>
-														<option value="2">Staff</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
+													<select class="form-control" id="group" name="group">
+            								<option value = "Staff">Staff</option>
+            								<option value = "Admin">Admin</option>
+            								<option value = "Manager">Manager</option>
+            								<option value = "Dev">Dev</option>
 													</select>
 												</div>
 												<div class="form-group">
 													<label for="activeedit">Active</label>
-													<input type="checkbox" id='activeedit' >
+            							<input type="checkbox" id="active" name="active" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
 												</div>
 											</div>
 											<div class="modal-footer">
-												<button type="submit" class="btn btn-info">Submit</button>
+												<button type="submit" class="btn btn-info" id="addSubmit" name="addSubmit">Submit</button>
 												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 											</div>
 										</form>
@@ -157,27 +159,27 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Sửa sản phẩm</h4>
 				</div>
-				<form>
+				<form action="quan-ly-nhan-su.php" method="POST">
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="name">Tên:</label>
-							<input type="text" class="form-control" id="name">
+							<input type="text" class="form-control" id="nameedit" name="nameedit">
 						</div>
 						<div class="form-group">
 							<label for="username">Tên đăng nhập:</label>
-							<input type="text" class="form-control" id="username">
+							<input type="text" class="form-control" id="usernameedit" name="usernameedit">
 						</div>
 						<div class="form-group">
 							<label for="password">Mật khẩu:</label>
-							<input type="password" class="form-control" id="password">
+							<input type="password" class="form-control" id="passwordedit" name="passwordedit">
 						</div>
 						<div class="form-group">
 							<label for="group">Chức vụ:</label>
-							<select class="form-control" id="group">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
+							<select class="form-control" id="groupedit" name="groupedit">
+                <option value = "Staff" >Staff</option>
+                <option value = "Admin" >Admin</option>
+                <option value = "Manager" >Manager</option>
+                <option value = "Dev" >Dev</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -186,7 +188,8 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-info">Submit</button>
+						<button type="submit" class="btn btn-danger" id="deleteSubmit" name="deleteSubmit">Delete</button>
+						<button type="submit" class="btn btn-info" id="editSubmit" name="editSubmit">Submit</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</form>
@@ -290,12 +293,12 @@
 		function getRow(id) {
 			var row = $("#table1").bootstrapTable('getRowByUniqueId', id)
       ////Coder code
-      $('#nameedit').val(row.supplier_name);
-      $('#addressedit').val(row.supplier_address);
-      $('#phoneedit').val(row.supplier_phone_number);
-      $('#deleteSubmit').prop( "value", row.supplier_id);
-      $('#editSubmit').prop( "value", row.supplier_id );
-      $('#deleteSubmit').click({name: row.supplier_name}, displayComfirm);
+      $('#nameedit').val(row.staff_name);
+      $('#usernameedit').val(row.staff_username);
+      $('#passwordedit').val(row.staff_password);
+      $('#deleteSubmit').prop( "value", row.staff_id);
+      $('#editSubmit').prop( "value", row.staff_id );
+      $('#deleteSubmit').click({name: row.staff_name}, displayComfirm);
       // in your function, just grab the event object and go crazy...
       function displayComfirm(event){
           confirm('Xác nhận xóa nhà sản xuất '+event.data.name);

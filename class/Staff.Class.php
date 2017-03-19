@@ -7,7 +7,7 @@
     private $staffPassword;
     private $staffName;
     private $staffRole;
-    private $isactive;
+    private $isActive;
 
     public function __construct($id,$user,$pass,$name,$role,$active)
     {
@@ -16,7 +16,7 @@
       $this->staffPassword = $pass;
       $this->staffName = $name;
       $this->staffRole = $role;
-      $this->isactive = $active;
+      $this->isActive = $active;
     }
 
     public static function login($user,$pass)
@@ -38,14 +38,14 @@
       {
         $db= new Db();
         $sql = "INSERT INTO staff (staff_id,staff_username,staff_password,staff_name,staff_role,is_active)"
-              ."VALUES(null,'".$this->staffUsername."','".$this->staffPassword."','".$this->staffName."','".$this->staffRole."','".$this->is_active."')";
+              ."VALUES(null,'".$this->staffUsername."','".$this->staffPassword."','".$this->staffName."','".$this->staffRole."',b'".$this->isActive."')";
         $res=$db->query_execute_return_affected_rows($sql);
         return $res;
       }
       public function edit()
       {
         $db= new Db();
-        $sql = "UPDATE staff SET staff_username = '".$this->staffUsername."', staff_password = '".$this->staffPassword."' , staff_name = '".$this->staffName."', staff_role='".$this->staffRole."' ,is_active = b'$this->is_active' WHERE supplier_id = '$this->staffId'";
+        $sql = "UPDATE staff SET staff_username = '".$this->staffUsername."', staff_password = '".$this->staffPassword."' , staff_name = '".$this->staffName."', staff_role='".$this->staffRole."' ,is_active = '.$this->isActive.' WHERE staff_id = '$this->staffId'";
         $res=$db->query_execute_return_affected_rows($sql);
         return $res;
       }
