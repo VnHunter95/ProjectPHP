@@ -21,7 +21,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="quan-ly-tag.html">
+						<a href="quan-ly-tag.php">
 							<svg class="glyph stroked chevron-right">
 								<use xlink:href="#stroked-chevron-right"></use>
 							</svg> Quản lý Tag

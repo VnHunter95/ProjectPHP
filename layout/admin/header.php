@@ -1,3 +1,20 @@
+<?php
+	if (session_status() == PHP_SESSION_NONE) {
+			session_start();
+	}
+	if(!isset($_SESSION['staff']))
+	{
+		header("Location: login.php");
+		exit;
+	}
+	if(isset($_POST['logout']))
+	{
+		echo '<script>alert("Logging out");</script>';
+		unset($_SESSION['staff']);
+		header("Location: login.php");
+		exit;
+	}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -32,6 +49,9 @@
 
 </head>
 <body>
+	<form id="logout" hidden method="post" action="index.php">
+		<input type="text" hidden value="1" name="logout">
+	</form>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -47,7 +67,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<svg class="glyph stroked male-user">
 								<use xlink:href="#stroked-male-user"></use>
-							</svg> User <span class="caret"></span></a>
+							</svg> <?php echo $_SESSION['staff']['staff_username'] ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li>
 								<a href="#">
@@ -55,7 +75,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="javascript:{}" onclick="document.getElementById('logout').submit();">
 									<span class="glyphicon glyphicon-off"></span> Logout
 								</a>
 							</li>
@@ -67,5 +87,7 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-  <?php include('displaySideBar.php');
+<?php
+		include('displaySideBar.php');
+
 ?>

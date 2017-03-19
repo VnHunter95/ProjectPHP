@@ -22,7 +22,7 @@
     public static function login($user,$pass)
     {
       $db = new DB();
-      $sql = "SELECT staff_id FROM staff WHERE staff_username = '".$user."' and staff_password = '".$pass."'";
+      $sql = "SELECT * FROM staff WHERE staff_username = '".$user."' and staff_password = '".$pass."'";
       $result = $db->select_to_array($sql);
       return $result;
     }
