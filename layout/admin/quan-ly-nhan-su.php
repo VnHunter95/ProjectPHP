@@ -1,41 +1,43 @@
 <?php
   include('header.php');
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Supplier.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Staff.Class.php');
   if(isset($_POST['editSubmit']))
   {
     $id       = $_POST['editSubmit'];
     $name     = $_POST['nameedit'];
-    $phone    = $_POST['phoneedit'];
-    $adr      = $_POST['addressedit'];
+    $username = $_POST['usernameedit'];
+    $password = $_POST['passwordedit'];
+    $role     = $_POST['groupedit'];
     if(isset($_POST['activeedit']))
     {
       $active = '1';
     }else {
       $active = '0';
     }
-    $newSupplier = new Supplier($id,$name,$adr,$phone,$active);
-    $res = $newSupplier->edit();
+    $newStaff = new Staff($id,$username,$password,$name,$role,$active);
+    $res = $newStaff->edit();
     if($res == -1)
     {
-      echo '<script>alert("Sửa nhà sản xuất thất bại")</script>';
+      echo '<script>alert("Sửa thông tin staff thất bại")</script>';
     }else {
-      echo '<script>alert("Sửa nhà sản xuất thành công")</script>';
+      echo '<script>alert("Sửa staff thành công")</script>';
     }
   }
   if(isset($_POST['addSubmit']))
   {
     $id       = $_POST['addSubmit'];
     $name     = $_POST['name'];
-    $phone    = $_POST['phone'];
-    $adr      = $_POST['address'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $role     = $_POST['group'];
     if(isset($_POST['active']))
     {
       $active = '1';
     }else {
       $active = '0';
     }
-    $newSupplier = new Supplier(null,$name,$adr,$phone,$active);
-    $res = $newSupplier->save();
+    $newStaff = new Staff(null,$username,$password,$name,$role,$active);
+    $res = $newStaff->save();
     if($res == -1 || $res == 0)
     {
       echo '<script>alert("Thêm nhà sản xuất thất bại")</script>';
@@ -46,8 +48,8 @@
   if(isset($_POST['deleteSubmit']))
   {
     $id = $_POST['deleteSubmit'];
-    $cus = new Supplier($id,'','','','');
-    $res = $cus->delete();
+    $staff = new Staff($id,'','','','','0');
+    $res = $staff->delete();
     if($res == 0 || $res == -1)
     {
         echo '<script>alert("Xóa thất bại !")</script>';
@@ -75,12 +77,13 @@
 						</svg>
 					</a>
 				</li>
-				<li class="active">Quản lý nhà cung cấp</li>
+				<li class="active">Quản lý nhân sự</li>
 			</ol>
 		</div>
 
 
 		<!--thêm sp-->
+
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
@@ -96,29 +99,38 @@
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title">Thêm nhà cung cấp</h4>
+											<h4 class="modal-title">Thêm nhân sự</h4>
 										</div>
-										<form action="quan-ly-nha-cung-cap.php" method="POST">
+										<form action="quan-ly-nhan-su.php" method="POST">
 											<div class="modal-body">
 												<div class="form-group">
-													<label for="name">Tên nhà cung cấp:</label>
+													<label for="name">Tên:</label>
 													<input type="text" class="form-control" id="name" name="name">
 												</div>
 												<div class="form-group">
-													<label for="address">Địa chỉ:</label>
-													<textarea rows="6" id="address" class="form-control" name="address"></textarea>
+													<label for="username">Tên đăng nhập:</label>
+													<input type="text" class="form-control" id="username" name="username">
 												</div>
 												<div class="form-group">
-													<label for="phone">Số điện thoại:</label>
-													<input type="text" class="form-control" id="phone" style="width:40%" name="phone">
+													<label for="password">Mật khẩu:</label>
+													<input type="password" class="form-control" id="password" name = "password">
 												</div>
 												<div class="form-group">
-													<label for="active">Active</label>
-                          <input type="checkbox" id='active' name="active" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+													<label for="group">Chức vụ:</label>
+													<select class="form-control" id="group" name="group">
+            								<option value = "Staff">Staff</option>
+            								<option value = "Admin">Admin</option>
+            								<option value = "Manager">Manager</option>
+            								<option value = "Dev">Dev</option>
+													</select>
+												</div>
+												<div class="form-group">
+													<label for="activeedit">Active</label>
+            							<input type="checkbox" id="active" name="active" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
 												</div>
 											</div>
 											<div class="modal-footer">
-												<button type="submit" class="btn btn-info" name='addSubmit'>Submit</button>
+												<button type="submit" class="btn btn-info" id="addSubmit" name="addSubmit">Submit</button>
 												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 											</div>
 										</form>
@@ -138,37 +150,46 @@
 	<!--thêm sp-->
 
 	<!--Sửa sp-->
-	<div id="myModal2" class="modal fade" role="dialog">
+  <div id="myModal2" class="modal fade" role="dialog">
 		<div class="modal-dialog">
+
 			<!-- Modal content-->
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Sửa thông tin nhà cung cấp</h4>
+					<h4 class="modal-title">Sửa sản phẩm</h4>
 				</div>
-				<form action="quan-ly-nha-cung-cap.php" method="POST">
+				<form action="quan-ly-nhan-su.php" method="POST">
 					<div class="modal-body">
 						<div class="form-group">
-							<label for="nameedit">Tên nhà cung cấp:</label>
+							<label for="name">Tên:</label>
 							<input type="text" class="form-control" id="nameedit" name="nameedit">
 						</div>
 						<div class="form-group">
-							<label for="addressedit">Địa chỉ:</label>
-							<textarea rows="6" id="addressedit" name="addressedit" class="form-control"></textarea>
+							<label for="username">Tên đăng nhập:</label>
+							<input type="text" class="form-control" id="usernameedit" name="usernameedit">
 						</div>
 						<div class="form-group">
-							<label for="phoneedit">Số điện thoại:</label>
-							<input type="text" class="form-control" id="phoneedit" name="phoneedit" style="width:40%">
+							<label for="password">Mật khẩu:</label>
+							<input type="password" class="form-control" id="passwordedit" name="passwordedit">
+						</div>
+						<div class="form-group">
+							<label for="group">Chức vụ:</label>
+							<select class="form-control" id="groupedit" name="groupedit">
+                <option value = "Staff" >Staff</option>
+                <option value = "Admin" >Admin</option>
+                <option value = "Manager" >Manager</option>
+                <option value = "Dev" >Dev</option>
+							</select>
 						</div>
 						<div class="form-group">
 							<label for="activeedit">Active</label>
-              <input type="checkbox" id='activeedit' name="activeedit" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
-
+							<input type="checkbox" id='activeedit' data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-danger" name="deleteSubmit" id="deleteSubmit" >Xóa</button>
-						<button type="submit" class="btn btn-info" name="editSubmit" id="editSubmit">Sửa</button>
+						<button type="submit" class="btn btn-danger" id="deleteSubmit" name="deleteSubmit">Delete</button>
+						<button type="submit" class="btn btn-info" id="editSubmit" name="editSubmit">Submit</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</form>
@@ -179,9 +200,9 @@
 
 	<script>
     $(document).ready(function () {
-      var url = 'http://'+window.location.hostname+':5454/layout/admin/quan-ly-nha-cung-cap/supplierData.php';
+      var url = 'http://'+window.location.hostname+':5454/layout/admin/quan-ly-nhan-su/staffData.php';
       $.getJSON(url, function (data) {
-          var suppliers = data;
+          var staff = data;
           // http://bootstrap-table.wenzhixin.net.cn/documentation/
       		$('#table1').bootstrapTable({
       			buttonsClass: 'info',
@@ -189,33 +210,36 @@
       			showColumns: true,
       			showToggle: true,
       			showRefresh: true,
-            sortName: 'supplier_id',
+            sortName: 'staff_id',
             sortOrder: 'asc',
       			toolbar: "#toolbar",
       			pagination: true,
-      			uniqueId: "supplier_id",
+      			uniqueId: "staff_id",
       			pageList: [10, 20, 30, 40],
       			columns: [
       				{
-      					field: 'supplier_id',
+      					field: 'staff_id',
       					title: 'ID',
       				}, {
-      					field: 'supplier_name',
-      					title: 'Tên Nhà Cung Cấp',
+      					field: 'staff_username',
+      					title: 'Username',
       					formatter: "operateFormatter"
       				}, {
-      					field: 'supplier_address',
-      					title: 'Địa Chỉ'
+      					field: 'staff_password',
+      					title: 'Password'
+      				}, {
+      					field: 'staff_name',
+      					title: 'Tên'
       				},{
+                field: 'staff_role',
+                title: 'Vai Trò'
+              },{
                 field: 'is_active',
                 title: 'Tình Trạng',
                 formatter: "activeFormatter"
-              },{
-                field: 'supplier_phone_number',
-                title: 'Điện Thoại'
               }
             ],
-      			data: suppliers
+      			data: staff
       		});
       		$("#table1").on('check.bs.table uncheck.bs.table ' +
       			'check-all.bs.table uncheck-all.bs.table', function () {
@@ -243,9 +267,9 @@
       var text = '';
       if(value == 1)
       {
-        text = 'Hoạt Động'
+        text = 'Bình Thường'
       }else {
-        text = 'Ngưng Hoạt Động'
+        text = 'Khóa'
       }
       return [
         text
@@ -254,7 +278,7 @@
       ////YOLO FROM HERE
 		function operateFormatter(value, row, index) {
 			return [
-				'<a class="like" href="#" data-toggle="modal" data-target="#myModal2" onclick=getRow(' + row.supplier_id + ')>' + row.supplier_name,
+				'<a class="like" href="#" data-toggle="modal" data-target="#myModal2" onclick=getRow(' + row.staff_id + ')>' + row.staff_username,
 				'</a>'
 			].join('');
 		};
@@ -262,28 +286,28 @@
 
 		function getIdSelections() {
 			return $.map($("#table1").bootstrapTable('getSelections'), function (row) {
-				return row.supplier_id;
+				return row.staff_id;
 			});
 		}
 
 		function getRow(id) {
 			var row = $("#table1").bootstrapTable('getRowByUniqueId', id)
       ////Coder code
-      $('#nameedit').val(row.supplier_name);
-      $('#addressedit').val(row.supplier_address);
-      $('#phoneedit').val(row.supplier_phone_number);
-      $('#deleteSubmit').prop( "value", row.supplier_id);
-      $('#editSubmit').prop( "value", row.supplier_id );
-      $('#deleteSubmit').click({name: row.supplier_name}, displayComfirm);
+      $('#nameedit').val(row.staff_name);
+      $('#usernameedit').val(row.staff_username);
+      $('#passwordedit').val(row.staff_password);
+      $('#deleteSubmit').prop( "value", row.staff_id);
+      $('#editSubmit').prop( "value", row.staff_id );
+      $('#deleteSubmit').click({name: row.staff_name}, displayComfirm);
       // in your function, just grab the event object and go crazy...
       function displayComfirm(event){
           confirm('Xác nhận xóa nhà sản xuất '+event.data.name);
       }
       if(row.is_active == '1')
       {
-        $('#activeedit').bootstrap-toggle("on");
+        $('#activeedit').prop( "checked", true );
       }else{
-        $('#activeedit').bootstrap-toggle("off");
+        $('#activeedit').prop( "checked", false );
       }
       ////////YOLO FROM HERE
 			//Đổ dữ liệu vào modal2 ở đây

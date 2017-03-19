@@ -29,7 +29,7 @@
       {
         $db= new Db();
         $sql = "INSERT INTO supplier (supplier_id,supplier_name,supplier_address,supplier_phone_number,is_active)"
-              ."VALUES(null,'".$this->supplier_name."','".$this->supplier_address."','".$this->supplier_phone_number."','".$this->is_active."')";
+              ."VALUES(null,'".$this->supplier_name."','".$this->supplier_address."','".$this->supplier_phone_number."', b'".$this->is_active."')";
         $res=$db->query_execute_return_affected_rows($sql);
         return $res;
       }
