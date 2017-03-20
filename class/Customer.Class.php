@@ -13,6 +13,10 @@
       $this->customer_address = $cus_add;
       $this->customer_email = $cus_email;
     }
+    public function setId($id)
+    {
+      $this->customer_id = $id;
+    }
     public function savecus(){
       $db = new DB();
       $sql = "INSERT INTO customer (customer_name, customer_phone_number,customer_address,customer_email) values
