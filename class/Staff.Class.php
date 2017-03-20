@@ -7,54 +7,37 @@
     private $staffPassword;
     private $staffName;
     private $staffRole;
-    private $isActive;
 
-    public function __construct($id,$user,$pass,$name,$role,$active)
+    public function __construct($id,$user,$pass,$name,$role)
     {
       $this->staffId = $id;
       $this->staffUsername = $user;
       $this->staffPassword = $pass;
       $this->staffName = $name;
       $this->staffRole = $role;
-      $this->isActive = $active;
     }
 
-    public static function login($user,$pass)
+    public static function login($user,$pass,$name,$role)
     {
-      $db = new DB();
-      $sql = "SELECT staff_id FROM staff WHERE staff_username = '".$user."' and staff_password = '".$pass."'";
+      $db = new Db();
+      $sql = "SELECT staff_id FROM staff WHERE staff_username = '".$user."' and staff_password = '".$pass."' and staff_name='".$name."' and staff_role='".$role."'";
       $result = $db->select_to_array($sql);
       return $result;
     }
-      public static function getStaffList(){
-
-        $db= new Db();
-        $sql = "SELECT * FROM staff ORDER BY staff_id ASC";
-        $res=$db->select_to_array($sql);
-        return $res;
-      }
-
-      public function save()
-      {
-        $db= new Db();
-        $sql = "INSERT INTO staff (staff_id,staff_username,staff_password,staff_name,staff_role,is_active)"
-              ."VALUES(null,'".$this->staffUsername."','".$this->staffPassword."','".$this->staffName."','".$this->staffRole."',b'".$this->isActive."')";
-        $res=$db->query_execute_return_affected_rows($sql);
-        return $res;
-      }
-      public function edit()
-      {
-        $db= new Db();
-        $sql = "UPDATE staff SET staff_username = '".$this->staffUsername."', staff_password = '".$this->staffPassword."' , staff_name = '".$this->staffName."', staff_role='".$this->staffRole."' , is_active = b'".strval($this->isActive)."' WHERE staff_id = '$this->staffId'";
-        $res=$db->query_execute_return_affected_rows($sql);
-        return $res;
-      }
-      public function delete()
-      {
-        $db= new Db();
-        $sql = "DELETE FROM staff WHERE staff_id = '$this->staffId'";
-        $res = $db->query_execute_return_affected_rows($sql);
-        return $res;
-      }
+    public static function getprofile($user,$pass,$name,$role){
+      $db = new Db();
+        $sql = "SELECT staff_username,staff_password,staff_name,staff_role FROM staff WHERE staff_username ='".$user."'";
+      $result = $db->select_to_array($sql);
+      return $result;
     }
+    public static function savestaff($user,$pass,$name,$role)
+    {
+      $db =new Db();
+      $sql= "UPDATE staff_password ,staff_name SET staff_password='".$pass."'and staff_name='".$name."  WHERE staff_username ='".$user."'staff_role='".$role."'";
+      $result =$db->select_to_array($sql);
+      return $result;
+    }
+    
+}
+
 ?>
