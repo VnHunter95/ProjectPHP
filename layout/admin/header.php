@@ -63,7 +63,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="http://localhost:81/layout/admin/index.php"><span>Admin</span></a>
+				<a class="navbar-brand" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/layout/admin/index.php'?>"><span>Admin</span></a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">

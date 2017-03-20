@@ -7,7 +7,7 @@
 				</a>
 				<ul class="children collapse" id="sub-item-1">
 					<li>
-						<a href="quan-ly-san-pham.html">
+						<a href="quan-ly-san-pham.php">
 							<span class="glyphicon glyphicon-shopping-cart"></span> Quản lý sản phẩm
 						</a>
 					</li>
