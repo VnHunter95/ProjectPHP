@@ -30,7 +30,7 @@
       $result1= $cusinfo->delcus();
     }
     else {
-      echo "Đăng ký thành công!";
+      echo '<script>alert("Đăng Ký Thành Công");</script>';
     }
   }
 ?>
