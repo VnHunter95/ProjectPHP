@@ -7,8 +7,6 @@
     <div class="head-top">
         <div class=" h_menu4">
             <ul class="memenu skyblue">
-                <li><a class="color1" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/layout/user/danh-sach-san-pham.php' ;?>">Danh sách sản phẩm</a>
-                </li>
                 <li><a class="color1" href="#">Nhà Sản Xuất</a>
                     <div class="mepanel">
                         <div class="row">
