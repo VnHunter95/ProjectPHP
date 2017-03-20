@@ -1,5 +1,21 @@
 <li>
-    <a href="#" data-toggle="modal" data-target="#cartModal"><span class="glyphicon glyphicon-shopping-cart"></span> 2 Sản Phẩm - 360.000 VNĐ</a>
+<?php
+  $total = 0 ;
+  $itemCount = 0;
+  $cartInfo = ' (0) Sản Phẩm ';
+  if(isset($_SESSION['cart']))
+  {
+    if(count($_SESSION['cart']) > 0){
+      foreach($_SESSION['cart'] as $item)
+      {
+        $total += intval($item['price'])*intval($item['quantity']);
+        $itemCount += intval($item['quantity']);
+      }
+      $cartInfo = $itemCount.' Sản Phẩm - '.number_format($total).' VNĐ </a>';
+    }
+  }
+?>
+<a href="#" data-toggle="modal" data-target="#cartModal" id="cartTotal"><span class="glyphicon glyphicon-shopping-cart"></span><?php echo $cartInfo?></a>
     <div id="cartModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
             <!-- Modal content-->
@@ -19,65 +35,32 @@
                                 <th style="width:10%"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <!--Product 1-->
-                            <tr>
-                                <td data-th="Product">
-                                    <div class="row">
-                                        <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"
-                                            /></div>
-                                        <div class="col-sm-6">
-                                            <h4 style="max-width: 320px;word-wrap: break-word;">Product 1</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-th="Price">180.000 VNĐ</td>
-                                <td data-th="Quantity">
-                                    <input type="number" class="form-control text-center" value="1">
-                                </td>
-                                <td data-th="Subtotal" class="text-center">180.000 VNĐ</td>
-                                <td data-th="" class="actions">
-                                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
-                            <!--Product 2-->
-                            <tr>
-                                <td data-th="Product">
-                                    <div class="row">
-                                        <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"
-                                            /></div>
-                                        <div class="col-sm-6">
-                                            <h4 style="max-width: 320px;word-wrap: break-word;">Product 2</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td data-th="Price">180.000 VNĐ</td>
-                                <td data-th="Quantity">
-                                    <input type="number" class="form-control text-center" value="1">
-                                </td>
-                                <td data-th="Subtotal" class="text-center">180.000 VNĐ</td>
-                                <td data-th="" class="actions">
-                                    <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
-                                </td>
-                            </tr>
+                        <tbody id="itemTable">
+                            <?php include('displayCartItems.php'); ?>
                         </tbody>
                         <tfoot>
                             <tr class="visible-xs">
-                                <td class="text-center"><strong>Total: 360.000 VNĐ</strong></td>
+                                <td class="text-center" id="cartTotal2"><strong><?php echo 'Total: '.number_format($total).' VNĐ'; ?></strong></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td colspan="2" class="hidden-xs"></td>
-                                <td class="hidden-xs text-center"><strong>Total: 360.000 VNĐ</strong></td>
+                                <td class="hidden-xs text-center" id="cartTotal1"><?php echo 'Total: '.number_format($total).' VNĐ'; ?></td>
                                 <td></td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info" onclick="location.href = 'http://'+window.location.host+'/layout/user/thanh-toan.php'" >Thanh Toán</button>
-                    <button type="button" class="btn btn-default" style="float:left;">Xóa giỏ hàng</button>
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" onclick="goToThanhToan();">Thanh Toán</button>
+                    <button type="button" class="btn btn-default" style="float:left;" onclick="clearCart()">Xóa giỏ hàng</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >Đóng</button>
+                    <script>
+                      function goToThanhToan()
+                      {
+                        location.href = 'http://'+location.hostname+':'+location.port+'/layout/user/thanh-toan.php';
+                      }
+                    </script>
                 </div>
             </div>
         </div>

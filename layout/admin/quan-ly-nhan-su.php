@@ -1,6 +1,6 @@
 <?php
   include('header.php');
-  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/Staff.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Staff.Class.php');
   if(isset($_POST['editSubmit']))
   {
     $id       = $_POST['editSubmit'];
@@ -200,7 +200,7 @@
 
 	<script>
     $(document).ready(function () {
-      var url = 'http://'+window.location.hostname+'/ProjectPHP/layout/admin/quan-ly-nhan-su/staffData.php';
+      var url = 'http://'+window.location.hostname+':5454/layout/admin/quan-ly-nhan-su/staffData.php';
       $.getJSON(url, function (data) {
           var staff = data;
           // http://bootstrap-table.wenzhixin.net.cn/documentation/

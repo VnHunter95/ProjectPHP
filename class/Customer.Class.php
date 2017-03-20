@@ -1,17 +1,21 @@
 <?php
   require_once($_SERVER['DOCUMENT_ROOT']."/config/DB.class.php");
   class Customer{
-    public $customer_id;
-    public $customer_name;
-    public $customer_phone_number;
-    public $customer_address;
-    public $customer_email;
+    private $customer_id;
+    private $customer_name;
+    private $customer_phone_number;
+    private $customer_address;
+    private $customer_email;
     public function __construct($cus_id, $cus_name,$cus_phone,$cus_add,$cus_email){
       $this->customer_id  = $cus_id;
       $this->customer_name  = $cus_name;
       $this->customer_phone_number = $cus_phone;
       $this->customer_address = $cus_add;
       $this->customer_email = $cus_email;
+    }
+    public function setId($id)
+    {
+      $this->customer_id = $id;
     }
     public function savecus(){
       $db = new DB();

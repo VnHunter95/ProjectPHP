@@ -1,11 +1,13 @@
 <?php
-  if($cartItems == false)
+  $totalPrice = 0;
+  if($cartItems == false || $cartItems == 0)
   {
     echo '<h2>Chưa có sản phẩm trong giỏ hàng</h2>';
   }else {
     foreach($cartItems as $item)
     {
       $name = $item['product_name'];
+      $totalPrice += intval($item['quantity'])*intval($item['price']);
     ?>
     <div class="cart-header">
          <div class="cart-sec simpleCart_shelfItem">

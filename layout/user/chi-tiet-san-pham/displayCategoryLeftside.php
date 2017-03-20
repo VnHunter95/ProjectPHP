@@ -4,7 +4,7 @@
 ?>
 <div class=" rsidebar span_1_of_left">
   <div class="of-left">
-    <h3 class="cate">Sản Phẩm</h3>
+    <h3>Sản Phẩm</h3>
   </div>
      <ul class="menu">
        <li class="item1"><a href="#">Loại Sản Phẩm</a>

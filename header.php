@@ -26,6 +26,7 @@
     <script src="/shared/js/searchProduct.js"></script>
     <script src="/shared/js/toancustomscript.js"></script>
     <script src="/shared/js/custom.js"></script>
+    <script src="/shared/js/cart.js"></script>
     <style>
        #map {
         height: 400px;
@@ -41,7 +42,7 @@
           <div class="container-fluid">
               <div class="navbar-header">
                   <div class="logo">
-                      <!--<a href="index.html"><img src="image/logo.png" alt=""></a>-->
+                      <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT']; ?>"><img src="../../shared/image/logo.png" alt="image/logo.png" style="height: 50px ; width: 50px;"></a>
                   </div>
               </div>
               <ul class="nav navbar-nav">
