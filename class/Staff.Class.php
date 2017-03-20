@@ -56,5 +56,18 @@
         $res = $db->query_execute_return_affected_rows($sql);
         return $res;
       }
+      public static function getprofile($user,$pass,$name,$role){
+      $db = new Db();
+        $sql = "SELECT staff_username,staff_password,staff_name,staff_role FROM staff WHERE staff_username ='".$user."'";
+      $result = $db->select_to_array($sql);
+      return $result;
+      }
+      public static function savestaff($user,$pass,$name,$role)
+      {
+        $db =new Db();
+        $sql= "UPDATE staff_password ,staff_name SET staff_password='".$pass."'and staff_name='".$name."  WHERE staff_username ='".$user."'staff_role='".$role."'";
+        $result =$db->select_to_array($sql);
+        return $result;
+      }
     }
 ?>
