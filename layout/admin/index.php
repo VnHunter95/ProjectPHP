@@ -2,11 +2,11 @@ HELLO ! THIS IS ADMIN INDEX.php
        THIS IS A TEST
 <?php
 
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/admin/method/getCountUser.php');
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/admin/method/getCountComment.php');
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/admin/method/getCountOrder.php');
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/admin/method/login.php');
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/admin/method/logoutAdmin.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/admin/method/getCountUser.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/admin/method/getCountComment.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/admin/method/getCountOrder.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/admin/method/login.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/admin/method/logoutAdmin.php');
   $count = getCountUser();
   $comment = getCountComment();
   $order = getCountOrder();

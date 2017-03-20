@@ -1,6 +1,6 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/ProductGroup.Class.php');
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Supplier.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/ProductGroup.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/Supplier.Class.php');
 ?>
 <div class=" rsidebar span_1_of_left">
   <div class="of-left">

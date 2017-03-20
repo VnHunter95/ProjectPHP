@@ -1,4 +1,4 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'].'/class/Tag.Class.php'); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/Tag.Class.php'); ?>
 <div class="sellers">
           <div class="of-left-in">
             <h3 class="tag">Tags</h3>

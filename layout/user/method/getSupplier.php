@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Supplier.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/Supplier.Class.php');
   function getSupplier()
   {
     $list = Supplier::list_supplier();

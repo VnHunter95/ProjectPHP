@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/header.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/header.php'); ?>
 <div class="content">
     <div class="container">
     <div class="col-md-2"></div>
@@ -86,4 +86,4 @@
     <div class="col-md-2"></div>
   </div>
 </div>
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/footer.php'); ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/footer.php'); ?>

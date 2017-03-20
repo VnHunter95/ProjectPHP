@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/ProductImage.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/ProductImage.Class.php');
   function getProductImages($id)
   {
     $imageids = ProductImage::getImagesofProduct($id);

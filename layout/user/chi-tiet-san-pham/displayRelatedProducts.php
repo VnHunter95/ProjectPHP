@@ -11,7 +11,7 @@
   ?>
       <div class="col-md-4 bottom-cd simpleCart_shelfItem">
         <div class="product-at ">
-          <a href="/layout/user/chi-tiet-san-pham.php?productid=<?php echo $item['product_id']; ?>"><img class="img-responsive" src="/shared/image/<?php echo ProductImage::get_one_product_image($item['product_id']);?>" alt="Related Products" style = "withd:300px; height:300px;  margin: 0 auto;">
+          <a href="/ProjectPHP/layout/user/chi-tiet-san-pham.php?productid=<?php echo $item['product_id']; ?>"><img class="img-responsive" src="/shared/image/<?php echo ProductImage::get_one_product_image($item['product_id']);?>" alt="Related Products" style = "withd:300px; height:300px;  margin: 0 auto;">
           <div class="pro-grid">
                 <span class="buy-in">Mua Ngay</span>
           </div>

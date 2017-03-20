@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/StoreInfo.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/StoreInfo.Class.php');
   $storeInfo = StoreInfo::getStoreInfo();
 ?>
     <div class="footer">

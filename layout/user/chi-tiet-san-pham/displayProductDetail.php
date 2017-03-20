@@ -1,6 +1,6 @@
 <?php
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductTags.php') ;
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductImages.php') ;
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/user/method/getProductTags.php') ;
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/user/method/getProductImages.php') ;
   $productTags = getProductTags($id);
   $productImages = getProductImages($id);
 ?>
@@ -13,8 +13,8 @@
           {
             foreach ($productImages as $item)
             {
-              echo '<li data-thumb="/shared/image/'.$item.'">'
-                    .'<img src="/shared/image/'.$item.'" />'
+              echo '<li data-thumb="/ProjectPHP/shared/image/'.$item.'">'
+                    .'<img src="/ProjectPHP/shared/image/'.$item.'" />'
                   .'</li>';
             }
           }
@@ -22,8 +22,8 @@
       </ul>
     </div>
       <!-- FlexSlider -->
-      <script defer src="/shared/js/jquery.flexslider.js"></script>
-      <link rel="stylesheet" href="/shared/css/flexslider.css" type="text/css" media="screen" />
+      <script defer src="/ProjectPHP/shared/js/jquery.flexslider.js"></script>
+      <link rel="stylesheet" href="/ProjectPHP/shared/css/flexslider.css" type="text/css" media="screen" />
 
       <script>
         // Can also be used with $(document).ready()
@@ -98,7 +98,7 @@
       <li data-content="television" class="selected">
         <div class="comments-top-top">
               <div class="top-comment-left">
-                <img class="img-responsive" src="/doc/design/layoutimage/co.png" alt="">
+                <img class="img-responsive" src="/ProjectPHP/doc/design/layoutimage/co.png" alt="">
               </div>
               <div class="top-comment-right">
                 <h6><a href="#">Hendri</a> - September 3, 2014</h6>

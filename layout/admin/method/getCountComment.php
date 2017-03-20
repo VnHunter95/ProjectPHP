@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Comment.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/Comment.Class.php');
   function getCountComment()
   {
     $count = Comment::getCommentCountAll();

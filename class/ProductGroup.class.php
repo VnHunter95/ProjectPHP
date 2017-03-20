@@ -1,5 +1,5 @@
 <?php
-      require_once($_SERVER['DOCUMENT_ROOT']."/config/DB.class.php");
+      require_once($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/config/DB.class.php");
 
     class ProductGroup{
       private $product_group_id;

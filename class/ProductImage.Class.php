@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER['DOCUMENT_ROOT']."/config/db.class.php");
+  require_once($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/config/DB.class.php");
 
   class ProductImage
   {

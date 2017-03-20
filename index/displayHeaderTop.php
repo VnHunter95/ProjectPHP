@@ -1,6 +1,6 @@
 <?php
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getSupplier.php');
-  include($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getProductGroup.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/user/method/getSupplier.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/layout/user/method/getProductGroup.php');
   $suppliers = getSupplier();
   $groups = getProductGroup();
 ?>
@@ -34,7 +34,7 @@
                                       <?php
                                         foreach($groups as $item)
                                         {
-                                          echo '<li><a href="/layout/user/danh-sach-san-pham.php?groupid='.$item['product_group_id'].'&page=1">'.$item['product_group_name'].'</a></li>';
+                                          echo '<li><a href="/ProjectPHP/layout/user/danh-sach-san-pham.php?groupid='.$item['product_group_id'].'&page=1">'.$item['product_group_name'].'</a></li>';
                                         }
                                       ?>
                                     </ul>
@@ -43,6 +43,10 @@
                         </div>
                     </div>
                 </li>
+<<<<<<< Updated upstream
+=======
+                <li><a class="color1" href="/ProjectPHP/layout/user/ban-do.php">Bản Đồ</a></li>
+>>>>>>> Stashed changes
             </ul>
         </div>
         <div class="clearfix"> </div>

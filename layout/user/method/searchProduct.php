@@ -1,6 +1,6 @@
 <?php
-    require_once($_SERVER['DOCUMENT_ROOT']."/config/DB.class.php");
-    require_once($_SERVER['DOCUMENT_ROOT']."/class/Product.Class.php");
+    require_once($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/config/DB.class.php");
+    require_once($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/class/Product.Class.php");
     /**Search products, search type depend on $type
     @params $type  - Search Type:
                             1 - by Product Name

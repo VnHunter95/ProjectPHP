@@ -1,7 +1,11 @@
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/header.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/header.php');?>
 <?php
+<<<<<<< Updated upstream
 include("method/getProductDetail.php");
+=======
+include("/ProjectPHP/method/getProductDetail.php");
+>>>>>>> Stashed changes
 
 if(!isset($_GET["productid"])){
 	header('Location: not_found.php');
@@ -55,7 +59,7 @@ else
 		</div>
 		</div>
 <!--//content-->
-<?php include($_SERVER['DOCUMENT_ROOT'].'/footer.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/footer.php');?>
 <script src="chi-tiet-san-pham/js/goToProductList.js"></script>
 </body>
 </html>

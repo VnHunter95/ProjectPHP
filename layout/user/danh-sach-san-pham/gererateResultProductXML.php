@@ -1,7 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/class/ProductImage.Class.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/class/Product.Class.php");
-include($_SERVER['DOCUMENT_ROOT']."/layout/user/method/searchProduct.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/class/ProductImage.Class.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/class/Product.Class.php");
+include($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/layout/user/method/searchProduct.php");
 if(isset($_GET['searchType']) &&  isset($_GET['input']) && isset($_GET['page']) && isset($_GET['produtPerPage']))
 {
   $searchType = $_GET['searchType'];

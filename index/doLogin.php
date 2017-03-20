@@ -1,6 +1,6 @@
 <?php
   session_start();
-  include($_SERVER['DOCUMENT_ROOT']."/layout/user/method/login.php");
+  include($_SERVER['DOCUMENT_ROOT']."/ProjectPHP/layout/user/method/login.php");
   $responseCode;
   if(isset($_GET['username'])&&isset($_GET['password']))
   {

@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require_once($_SERVER['DOCUMENT_ROOT'].'/class/Staff.Class.php');
+  require_once($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/class/Staff.Class.php');
   function login($user,$pass)
   {
     $id = Staff::login($user,$pass);
