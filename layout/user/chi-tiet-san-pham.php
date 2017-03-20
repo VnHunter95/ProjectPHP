@@ -1,11 +1,7 @@
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/ProjectPHP/header.php');?>
 <?php
-<<<<<<< Updated upstream
 include("method/getProductDetail.php");
-=======
-include("/ProjectPHP/method/getProductDetail.php");
->>>>>>> Stashed changes
 
 if(!isset($_GET["productid"])){
 	header('Location: not_found.php');

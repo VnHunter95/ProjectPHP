@@ -1,10 +1,6 @@
 function goToProductList(type,id)
 {
-<<<<<<< Updated upstream
   var url = 'http://'+location.hostname+':5454/layout/user/danh-sach-san-pham.php'
-=======
-  var url = 'http://'+window.location.host + '/ProjectPHP/layout/user/danh-sach-san-pham.php'
->>>>>>> Stashed changes
   switch(type)
   {
     case 1:

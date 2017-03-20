@@ -43,10 +43,6 @@
                         </div>
                     </div>
                 </li>
-<<<<<<< Updated upstream
-=======
-                <li><a class="color1" href="/ProjectPHP/layout/user/ban-do.php">Bản Đồ</a></li>
->>>>>>> Stashed changes
             </ul>
         </div>
         <div class="clearfix"> </div>
