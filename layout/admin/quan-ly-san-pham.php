@@ -3,9 +3,8 @@
     require_once($_SERVER['DOCUMENT_ROOT'].'/class/ProductGroup.class.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/class/Supplier.Class.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/getTag.php');
-    require_once($_SERVER['DOCUMENT_ROOT'].'/class/ProductTag.Class.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/class/Tag.Class.php');
     require_once($_SERVER['DOCUMENT_ROOT'].'/class/Product.Class.php');
-    require_once($_SERVER['DOCUMENT_ROOT'].'/layout/admin/quan-ly-san-pham/getTagWithIDProduct.php');
     $tag = getTag();
 
 
@@ -270,7 +269,7 @@
       ?>
 
     $(document).ready(function () {
-      var url = 'http://'+window.location.hostname+':80/ProjectPHP/layout/admin/quan-ly-san-pham/productData.php';
+      var url = 'http://'+window.location.hostname+':'+window.location.port+'/layout/admin/quan-ly-san-pham/productData.php';
       $.getJSON(url, function (data) {
           var product = data;
           // http://bootstrap-table.wenzhixin.net.cn/documentation/
@@ -395,7 +394,7 @@
 			var row = $("#table1").bootstrapTable('getRowByUniqueId', id);
 
       //document.write(row.product_id);
-      var url = 'http://'+location.hostname+':'+location.port+'/ProjectPHP/layout/admin/quan-ly-san-pham/tagData.php';
+      var url = 'http://'+location.hostname+':'+location.port+'/layout/admin/quan-ly-san-pham/tagData.php';
       var showTag;
        //document.write(f);
        $.post(url,{id:row.product_id},function(result,status){
