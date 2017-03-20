@@ -21,7 +21,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard - Website Bán Hàng</title>
+	<title>Dashboard - Website Bán Hàng</title>
 
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/datepicker3.css" rel="stylesheet">
@@ -29,6 +29,7 @@
 	<link href="assets/css/bootstrap-toggle.min.css" rel="stylesheet">
 	<link href="assets/css/adminstyles.css" rel="stylesheet">
 	<link href="assets/css/select2.min.css" rel="stylesheet">
+	<link href="assets/css/todo.css" rel="stylesheet">
 
 	<!--Icons-->
 	<script src="assets/js/lumino.glyphs.js"></script>
@@ -39,6 +40,7 @@
 	<script src="assets/js/bootstrap-toggle.min.js"></script>
 	<script src="assets/js/bootstrap-table-export.js"></script>
 	<script src="assets/js/tableExport.js"></script>
+	<script src="assets/js/todo.js"></script>
 
 	<!--select2-->
 	<script src="assets/js/select2.min.js"></script>
@@ -61,7 +63,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+				<a class="navbar-brand" href="http://localhost:81/layout/admin/index.php"><span>Admin</span></a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">

@@ -54,6 +54,10 @@
 }
 @media (max-width: 767px) {
 .navbar-form .form-group:last-child {margin-top: 5px}
+
+.navbar-form{
+	margin-top: 0px
+}
 }
 
 @media (min-width: 991px) {
@@ -73,6 +77,8 @@
 	background: url('../image/yourname.png') no-repeat ;
     background-size: 100% 100%;
 }
+
+
 /*
 .navbar-inverse {
 	background-image
