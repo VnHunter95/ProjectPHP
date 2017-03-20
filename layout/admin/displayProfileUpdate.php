@@ -31,10 +31,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/layout/admin/method/login.php');
 
 
   $getProfile=Staff::getprofile($user,$pass,$name,$role);
-  if(isset(($_SESSION['staff'])=$getProfile){
-    if(isset(($_SESSION['btn btn-Submit'])))
-    $password =$_POST['password'];
-    $staff_name=$_POST['staff_name'];
+  if(isset(($_SESSION['staff'])$getProfile){
+    if(isset(($_SESSION['btn btn-Submit']))){
+      $password =$_POST['password'];
+      $staff_name=$_POST['staff_name'];
+  }
 }
    $updateProfile=Staff::savestaff($getProfile['staff_name'],$password,$staff_name,$getProfile['staff_role']);
    $result=$updateProfile->save();

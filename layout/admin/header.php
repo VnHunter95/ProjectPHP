@@ -63,7 +63,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="http://localhost:81/layout/admin/index.php"><span>Admin</span></a>
+				<a class="navbar-brand" href="http://localhost:5454/layout/admin/index.php"><span>Admin</span></a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -74,6 +74,11 @@
 							<li>
 								<a href="#">
 									<span class="glyphicon glyphicon-user"></span> Profile
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo 'http://localhost:5454/layout/admin/displayProfileUpdate.php?id='.$_SESSION['staff']['staff_id']; ?>">
+									<span class="glyphicon glyphicon-user"></span> UpdateProfile
 								</a>
 							</li>
 							<li>
