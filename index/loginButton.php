@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <label style="float:left">Chưa có tài khoản? <a href="#">Đăng ký</a></label>
+                    <label style="float:left">Chưa có tài khoản? <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/layout/user/dang-ky.php' ?>">Đăng ký</a></label>
                     <button type="submit" class="btn btn-primary" onclick="login()" >Đăng nhập</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 </div>
