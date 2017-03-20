@@ -42,7 +42,7 @@
           <div class="container-fluid">
               <div class="navbar-header">
                   <div class="logo">
-                      <a href="#"><img src="../../shared/image/logo.png" alt="image/logo.png"></a>
+                      <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT']; ?>"><img src="../../shared/image/logo.png" alt="image/logo.png" style="height: 50px ; width: 50px;"></a>
                   </div>
               </div>
               <ul class="nav navbar-nav">

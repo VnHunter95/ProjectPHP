@@ -1,12 +1,16 @@
-<?php include_once($_SERVER['DOCUMENT_ROOT']."/header.php"); ?>
 <?php
-  if(isset($_SESSION['user'])!=""){
-    header("Location: index.php");
+  if (session_status() == PHP_SESSION_NONE) {
+      session_start();
   }
-
+  if(isset($_SESSION['username'])){
+      header("Location: http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."/index.php");
+      exit;
+  }
+  include($_SERVER['DOCUMENT_ROOT']."/header.php");
+?>
+<?php
   if(isset($_POST['btndangky'])){
     require_once($_SERVER['DOCUMENT_ROOT'].'/layout/user/method/register.php');
-    echo "<script>alter('Đã xảy ra lỗi, đăng ký thất bại!');</script>";
   }
   if(isset($_POST['btnreset'])){
     $_POST['txtusername'] = "";

@@ -16,7 +16,7 @@
 //  $result2 = $userinfo->saveuser();
 
   // Test
-  $cusinfo->customer_id= $result1;
+  $cusinfo->setId($result1);
   if($result1 == false){
     echo "<h1>Đã có lỗi xảy ra với thông tin khách hàng.</h1>";
   }else
@@ -30,7 +30,7 @@
       $result1= $cusinfo->delcus();
     }
     else {
-      echo "Đăng ký thành công!";
+      echo '<script>alert("Đăng Ký Thành Công");</script>';
     }
   }
 ?>
