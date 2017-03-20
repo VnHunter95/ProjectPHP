@@ -24,6 +24,12 @@
         $this->updateDate=$update;
       }
       //Get Product list
+      public static function getFullListProduct(){
+        $db= new Db();
+        $sql = "SELECT * FROM product";
+        $res=$db->select_to_array($sql);
+        return $res;
+      }
       public static function list_product(){
         $db= new Db();
         $sql = "SELECT p.* FROM product p,supplier s WHERE p.supplier_id = s.supplier_id AND s.is_active = '1'";
