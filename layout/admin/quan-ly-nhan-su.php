@@ -188,7 +188,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" class="btn btn-danger" id="deleteSubmit" name="deleteSubmit">Delete</button>
+						<!--<button type="submit" class="btn btn-danger" id="deleteSubmit" name="deleteSubmit">Delete</button>-->
 						<button type="submit" class="btn btn-info" id="editSubmit" name="editSubmit">Submit</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
@@ -200,7 +200,7 @@
 
 	<script>
     $(document).ready(function () {
-      var url = 'http://'+window.location.hostname+':5454/layout/admin/quan-ly-nhan-su/staffData.php';
+      var url = 'http://'+window.location.hostname+':81/layout/admin/quan-ly-nhan-su/staffData.php';
       $.getJSON(url, function (data) {
           var staff = data;
           // http://bootstrap-table.wenzhixin.net.cn/documentation/

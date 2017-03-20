@@ -44,12 +44,11 @@
                     <form action="quan-ly-tag.php" method="POST">
                       <label for="#addname">Thêm Mới</label>
                       <input type="text" required maxlength="50" name="name" id="addname"/>
-                      <button class="btn btn-primary" name="addSubmit" type="submit" >
+                      <button class="btn btn-success" name="addSubmit" type="submit" >
                         <i class="glyphicon glyphicon-plus"></i>Thêm
                       </button>
                    </form>
-              </div>
-              </div>
+              </div>	
               <table id="table1" data-show-export="true">
   						</table>
     						<!-- <table data-toggle="table" data-toolbar="#toolbar" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">

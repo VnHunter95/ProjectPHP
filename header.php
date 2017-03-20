@@ -45,9 +45,9 @@
                       <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT']; ?>"><img src="../../shared/image/logo.png" alt="image/logo.png" style="height: 50px ; width: 50px;"></a>
                   </div>
               </div>
-              <ul class="nav navbar-nav">
+              <!--<ul class="nav navbar-nav">
 
-              </ul>
+              </ul>-->
               <form class="navbar-form navbar-left" action="/layout/user/danh-sach-san-pham.php" method="GET">
                   <div class="input-group">
                       <input type="text" class="form-control" placeholder="Search" name="searchInput">

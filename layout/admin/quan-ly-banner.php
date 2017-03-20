@@ -87,7 +87,7 @@
   				<div class="panel panel-default">
   					<div class="panel-heading">Danh Sách Banner</div>
   					<div class="panel-body">
-  						<table data-toggle="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+  						<table data-toggle="table" data-buttons-class="info" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
   						    <thead>
   						    <tr>
   						        <th data-field="name" data-sortable="true">Filename</th>
@@ -105,7 +105,7 @@
                             echo '<tr>
                                     <td>'.$item['banner_image_filename'].'</td>
                                     <td><img src="/banner/'.$item['banner_image_filename'].'" class="img-responsive" style="width: 50%;"/></td>
-                                    <td><form action="quan-ly-banner.php" method="POST"><button class="btn btn-primary" name="subRemove" type="submit" value="'.$item['banner_image_filename'].'">Xóa</button></form></td>
+                                    <td><form action="quan-ly-banner.php" method="POST"><button class="btn btn-danger" name="subRemove" type="submit" value="'.$item['banner_image_filename'].'">Xóa</button></form></td>
                                   </tr>';
                           }
                         }
